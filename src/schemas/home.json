@@ -1,0 +1,75 @@
+{
+  "Main": {
+    "helloworld": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "helloworld",
+        "placeholder": "Hello World, I'm Derek Velzy"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "title": [
+            {
+              "name": "...",
+              "display": ""
+            }
+          ],
+          "links": []
+        },
+        "choices": {
+          "title": {
+            "type": "Slice",
+            "fieldset": "title",
+            "description": "title",
+            "icon": "face",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label": "title",
+                  "placeholder": "Full-Stack Software Engineer"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "links": {
+            "type": "Slice",
+            "fieldset": "links",
+            "description": "links",
+            "icon": "insert_link",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "gmail": {
+                "type": "Link",
+                "config": {
+                  "label": "gmail"
+                }
+              },
+              "linkedin": {
+                "type": "Link",
+                "config": {
+                  "label": "linkedin"
+                }
+              },
+              "github": {
+                "type": "Link",
+                "config": {
+                  "label": "github"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
