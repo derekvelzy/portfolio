@@ -92,6 +92,10 @@ const Project = styled.a`
     margin-top: -10px;
     box-shadow: rgba(0, 0, 0, 1) 0px 0px 10px;
   }
+  &:hover ${Image} {
+    transition: all 0.4s ease;
+    height: 246px;
+  }
 `
 const ProjectTitle = styled.div`
   padding: 8px 0px 0px 10px;
