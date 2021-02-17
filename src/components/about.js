@@ -28,10 +28,33 @@ const About = () => {
   return (
     <Container>
       <Title>About Me</Title>
-      <Line />
       <Box>
         <P>{data.prismicAbout.data.body[0].primary.paragraph.text}</P>
         <P>{data.prismicAbout.data.body[1].primary.paragraph.text}</P>
+      </Box>
+      <div style={{height: '26px'}}/>
+      <Box>
+        <Education>
+          <Logo src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/asu.png" />
+          <Content>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+              <School>Arizona State University</School>
+              <div>2014 - 2018</div>
+            </div>
+            <div>Bachelor of Science, Mechanical Engineering</div>
+          </Content>
+        </Education>
+        <div style={{height: '16px'}}/>
+        <Education>
+          <Logo src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/hackreactor.png" />
+          <Content>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+              <School>Hack Reactor, San Francisco</School>
+              <div>2020 - 2021</div>
+            </div>
+            <div>Software Engineering Immersive</div>
+          </Content>
+        </Education>
       </Box>
     </Container>
   )
@@ -39,17 +62,18 @@ const About = () => {
 
 const Box = styled.div`
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-  background: rgba(26, 25, 34, 0.7);
+  background: rgba(26, 25, 34, 0.85);
   backdrop-filter: blur(6px);
   padding: 20px;
-  width: 550px;
-  font-size: 15px;
+  width: 630px;
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   line-height: 27px;
+  border-radius: 20px;
 `
 const Container = styled.div`
-  font-family: 'work sans';
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   color: white;
   display: flex;
@@ -58,15 +82,30 @@ const Container = styled.div`
   justify-content: center;
   height: 100vh;
 `
+const Content = styled.div`
+  width: 480px;
+`
+const Education = styled.div`
+  line-height: 24px;
+  display: flex;
+`
+const Logo = styled.img`
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+`
 const P = styled.div`
   text-align: center;
   margin: 5px 0px;
 `
-const Title = styled.div`
-  font-size: 30px;
-  margin-bottom: 20px;
-  margin-top: -12vh;
+const School = styled.div`
   font-weight: 600;
+`
+const Title = styled.div`
+  font-size: 40px;
+  margin-bottom: 26px;
+  margin-top: -3vh;
+  font-family: 'Lobster', cursive;
   letter-spacing: 1px;
 `
 

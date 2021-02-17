@@ -45,8 +45,8 @@ const Contact = () => {
 };
 
 const Container = styled.div`
-  font-family: 'work sans';
-  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   color: white;
   display: flex;
   flex-direction: column;
@@ -74,6 +74,7 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  line-height: 27px;
 `
 const Item = styled.div`
   display: flex;
@@ -96,10 +97,10 @@ const Phone = styled.img`
 `
 const Title = styled.div`
   margin-top: -10vh;
-  font-weight: 600;
   letter-spacing: 1px;
-  font-size: 30px;
+  font-size: 40px;
   margin-bottom: 20px;
+  font-family: 'Lobster', cursive;
 `
 
 export default Contact;

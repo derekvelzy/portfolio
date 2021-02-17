@@ -39,7 +39,7 @@ const Projects = () => {
       <Project href={data.link.url} key={data.image.url} target="_blank">
         <ProjectTitle>{title}</ProjectTitle>
         <ImageCont>
-          <Image style={{marginTop: title === 'Optimize Prime - System Design' ? "-50px" : "-5px"}} src={data.image.url} />
+          <Image style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-5px"}} src={data.image.url} />
         </ImageCont>
         <Description>{data.description[0].text}</Description>
       </Project>
@@ -55,8 +55,7 @@ const Projects = () => {
 };
 
 const Container = styled.div`
-  font-family: 'work sans';
-  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
   color: white;
   display: flex;
   flex-direction: column;
@@ -65,51 +64,62 @@ const Container = styled.div`
   height: 100vh;
 `
 const Description = styled.div`
-  background: rgba(26, 25, 34, 0.7);
+  background: rgba(26, 25, 34, 0.85);
   backdrop-filter: blur(6px);
-  padding: 5px 10px;
+  padding: 10px 15px 15px 15px;
+  font-size: 14px;
+  font-weight: 300;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
 `
 const Image = styled.img`
-  width: 240px;
-  height: 239px;
+  width: 246px;
+  height: 255px;
   object-fit: cover;
 `
 const ImageCont = styled.div`
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background: rgba(26, 25, 34, 0.85);
+  backdrop-filter: blur(6px);
 `
 const Project = styled.a`
   font-size: 15px;
-  width: 240px;
-  height: 260px;
+  width: 260px;
+  height: 280px;
   display: flex;
   flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
   cursor: pointer;
   color: white;
   text-decoration: none;
+  border-radius: 16px;
   &:hover {
     transition: all 0.2s ease;
     margin-top: -10px;
     box-shadow: rgba(0, 0, 0, 1) 0px 0px 10px;
   }
   &:hover ${Image} {
-    transition: all 0.4s ease;
-    height: 246px;
+    transition: all 0.3s ease;
+    height: 270px;
   }
 `
 const ProjectTitle = styled.div`
-  padding: 8px 0px 0px 10px;
-  font-size: 14px;
-  background: rgba(26, 25, 34, 0.7);
+  padding: 12px 15px 0px 15px;
+  font-size: 13.5px;
+  background: rgba(26, 25, 34, 0.85);
   backdrop-filter: blur(6px);
   height: 40px;
   z-index: 1;
-  font-weight: 400;
+  font-weight: 600;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
 `
 const ProjectsCont = styled.div`
   display: flex;
-  width: 800px;
-  height: 600px;
+  width: 850px;
+  height: 620px;
   justify-content: space-between;
   flex-wrap: wrap;
 `

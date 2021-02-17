@@ -24,7 +24,9 @@ module.exports = {
         fonts: [
           `lato\:Bold 700`,
           `source sans pro\:300,400,400i,700`,
-          `work sans\:Semi-bold 600,Regular 400,Light 300`
+          `work sans\:Semi-bold 600,Regular 400,Light 300`,
+          `lobster\:Regular 400`,
+          `montserrat\:Regular 400,Light 300,Semi-bold 600`
         ],
         display: 'swap'
       }
