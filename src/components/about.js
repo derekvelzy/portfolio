@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
 import { Line } from './home.js';
@@ -28,12 +28,12 @@ const About = () => {
   return (
     <Container>
       <Title>About Me</Title>
-      <Box>
+      <Box data-aos="fade-up">
         <P>{data.prismicAbout.data.body[0].primary.paragraph.text}</P>
         <P>{data.prismicAbout.data.body[1].primary.paragraph.text}</P>
       </Box>
       <div style={{height: '26px'}}/>
-      <Box>
+      <Box data-aos="fade-up">
         <Education>
           <Logo src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/asu.png" />
           <Content>

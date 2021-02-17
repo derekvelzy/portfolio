@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useEffect } from "react"
 import styled from 'styled-components';
 import { Parallax, Background } from 'react-parallax';
 import Home from '../components/home.js';
@@ -7,8 +7,14 @@ import Projects from '../components/projects.js';
 import Skills from '../components/skills.js';
 import Resume from '../components/resume.js';
 import Contact from '../components/contact.js';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const IndexPage = () => {
+  useEffect(() => {
+    Aos.init({duration: 700});
+  }, []);
+
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);

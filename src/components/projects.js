@@ -36,7 +36,13 @@ const Projects = () => {
     const data = node.node.data.body[0].primary;
     const title = node.node.data.title[0].text;
     return (
-      <Project href={data.link.url} key={data.image.url} target="_blank">
+      <Project
+        href={data.link.url}
+        key={data.image.url}
+        arget="_blank"
+        data-aos={title === 'Grouply' || title === 'Shadetree' || title === 'Postcard' ? 'fade-right' : 'fade-left'}
+        data-aos-offset="50"
+      >
         <ProjectTitle>{title}</ProjectTitle>
         <ImageCont>
           <Image style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}} src={data.image.url} />
@@ -49,6 +55,8 @@ const Projects = () => {
 
   return (
     <Container>
+      <Title>Projects</Title>
+      <LinksTitle>Links to Repos on Github</LinksTitle>
       <ProjectsCont>{projects}</ProjectsCont>
     </Container>
   )
@@ -74,9 +82,8 @@ const Description = styled.div`
 `
 const Image = styled.img`
   width: 246px;
-  height: 255px;
+  height: 250px;
   object-fit: cover;
-  transition: all 0.3s ease;
 `
 const ImageCont = styled.div`
   overflow: hidden;
@@ -85,25 +92,9 @@ const ImageCont = styled.div`
   background: rgba(26, 25, 34, 0.85);
   backdrop-filter: blur(12px);
 `
-const Project = styled.a`
-  font-size: 15px;
-  width: 260px;
-  height: 280px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
-  cursor: pointer;
-  color: white;
-  text-decoration: none;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  &:hover {
-    margin-top: -10px;
-    box-shadow: rgba(0, 0, 0, 1) 0px 0px 10px;
-  }
-  &:hover ${Image} {
-    height: 266px;
-  }
+const LinksTitle = styled.div`
+  margin-bottom: 2vh;
+  text-shadow: rgba(0, 0, 0, 0.7) 0px 0px 10px;
 `
 const ProjectTitle = styled.div`
   padding: 12px 0px 0px 15px;
@@ -116,12 +107,52 @@ const ProjectTitle = styled.div`
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
 `
+const Project = styled.a`
+  font-size: 15px;
+  width: 260px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  &:hover {
+    transition: all 0.1s ease;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px;
+    margin-top: -6px;
+  }
+  &:hover ${ProjectTitle} {
+    transition: all 0.7s ease;
+    background: rgba(245, 245, 245, 0.75);
+    color: black;
+  }
+  &:hover ${Description} {
+    transition: all 0.7s ease;
+    background: rgba(245, 245, 245, 0.75);
+    color: black;
+  }
+  &:hover ${ImageCont} {
+    transition: all 0.7s ease;
+    background: rgba(245, 245, 245, 0.75);
+    color: black;
+  }
+`
 const ProjectsCont = styled.div`
   display: flex;
   width: 850px;
-  height: 620px;
+  height: 590px;
   justify-content: space-between;
   flex-wrap: wrap;
+`
+const Title = styled.div`
+  margin-bottom: 1vh;
+  letter-spacing: 1px;
+  font-size: 45px;
+  font-family: 'Lobster', cursive;
+  text-shadow: rgba(0, 0, 0, 0.7) 0px 0px 10px;
 `
 
 export default Projects;

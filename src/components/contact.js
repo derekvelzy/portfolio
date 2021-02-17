@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
 
@@ -8,21 +8,21 @@ const Contact = () => {
     <Container>
       <Title>Contact Info</Title>
       <Info>
-        <Item>
+        <Item data-aos="fade-up">
           <Gmail src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/gmailClear.png" />
           <div>
             <div>Email Me</div>
             <div>dmvelzy@gmail.com</div>
           </div>
         </Item>
-        <Item>
+        <Item data-aos="fade-up">
           <Phone src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/phoneIcon.png" />
           <div>
             <div>Give me a ring</div>
             <div>(925) 200-7710</div>
           </div>
         </Item>
-        <Item>
+        <Item data-aos="fade-up">
           <a target="_blank" href="https://www.linkedin.com/in/dvelzy/">
             <LinkedIn src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/linkedinClearBlue.jpg" />
           </a>

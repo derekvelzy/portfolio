@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
 
-const images = [
+const row1 = [
   {
     name: 'JavaScript',
     img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/JS.png'
@@ -22,7 +22,10 @@ const images = [
   {
     name: 'Node.js',
     img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/node.png'
-  },
+  }
+];
+
+const row2 = [
   {
     name: 'Webpack',
     img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/webpack.png'
@@ -42,7 +45,10 @@ const images = [
   {
     name: 'Nginx',
     img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/nginx.png'
-  },
+  }
+];
+
+const row3 = [
   {
     name: 'Jest/Enzyme',
     img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/jest.png'
@@ -69,8 +75,24 @@ const Skills = () => {
 
   return (
     <Container>
-      <Boxes>
-        {images.map((i) => (
+      <Boxes data-aos="fade-right">
+        {row1.map((i) => (
+          <Skill key={i.name}>
+            <Logo src={i.img}/>
+            <Name>{i.name}</Name>
+          </Skill>
+        ))}
+      </Boxes>
+      <Boxes data-aos="fade-left">
+        {row2.map((i) => (
+          <Skill key={i.name}>
+            <Logo src={i.img}/>
+            <Name>{i.name}</Name>
+          </Skill>
+        ))}
+      </Boxes>
+      <Boxes data-aos="fade-right">
+        {row3.map((i) => (
           <Skill key={i.name}>
             <Logo src={i.img}/>
             <Name>{i.name}</Name>
@@ -83,9 +105,8 @@ const Skills = () => {
 
 const Boxes = styled.div`
   width: 860px;
-  height: 80vh;
+  height: 25vh;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 `

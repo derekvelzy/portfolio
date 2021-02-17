@@ -154,7 +154,9 @@ const Git = styled.img`
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 15px;
   &:hover {
     background: rgba(0, 0, 0, 0.2);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px;
@@ -164,10 +166,12 @@ const Gmail = styled.img`
   cursor: pointer;
   width: 32px;
   height: 23px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px;
   &:hover {
-    background: rgba(0, 0, 0, 0.3);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px;
   }
 `
 const Icons = styled.div`
@@ -184,10 +188,12 @@ const LinkedIn = styled.img`
   cursor: pointer;
   width: 29px;
   height: 29px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px;
   &:hover {
-    background: rgba(0, 0, 0, 0.4);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px;
   }
 `
 const Name = styled.div`
@@ -197,6 +203,7 @@ const Name = styled.div`
   font-family: 'Lobster', cursive;
   letter-spacing: 1px;
   margin-bottom: 38vh;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
 `
 const Pic = styled.img`
   height: 24vh;
@@ -214,6 +221,7 @@ const TransContainer = styled.div`
   align-items: center;
   top: 28vh;
   font-size: 25px;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
 `
 
 export default Home;
