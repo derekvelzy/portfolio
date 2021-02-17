@@ -29,7 +29,7 @@ const IndexPage = () => {
         <Button onClick={homeScroll}>home</Button>
         <Button onClick={aboutScroll}>about</Button>
         <Button onClick={projectsScroll}>projects</Button>
-        <Button onClick={skillsScroll}>Skills</Button>
+        <Button onClick={skillsScroll}>skills</Button>
         {/* <Button onClick={resumeScroll}>resume</Button> */}
         <Button onClick={contactScroll}>contact</Button>
       </Switch>
