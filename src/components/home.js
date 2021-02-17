@@ -154,8 +154,8 @@ const Git = styled.img`
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  transition: all 0.3s ease;
   &:hover {
-    transition: all 0.2s ease;
     background: rgba(0, 0, 0, 0.2);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px;
   }
@@ -164,8 +164,8 @@ const Gmail = styled.img`
   cursor: pointer;
   width: 32px;
   height: 23px;
+  transition: all 0.3s ease;
   &:hover {
-    transition: all 0.2s ease;
     background: rgba(0, 0, 0, 0.3);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px;
   }
@@ -184,26 +184,26 @@ const LinkedIn = styled.img`
   cursor: pointer;
   width: 29px;
   height: 29px;
+  transition: all 0.3s ease;
   &:hover {
-    transition: all 0.2s ease;
     background: rgba(0, 0, 0, 0.4);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px;
   }
 `
 const Name = styled.div`
-  font-size: 40px;
+  font-size: 45px;
   margin-bottom: 20px;
-  margin-top: 18vh;
+  margin-top: 17vh;
   font-family: 'Lobster', cursive;
   letter-spacing: 1px;
-  margin-bottom: 36vh;
+  margin-bottom: 38vh;
 `
 const Pic = styled.img`
   height: 24vh;
   width: 24vh;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
   border: 2px solid white;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px;
 `

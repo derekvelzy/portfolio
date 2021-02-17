@@ -63,8 +63,8 @@ const About = () => {
 const Box = styled.div`
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
   background: rgba(26, 25, 34, 0.85);
-  backdrop-filter: blur(6px);
-  padding: 20px;
+  backdrop-filter: blur(12px);
+  padding: 24px;
   width: 630px;
   font-size: 16px;
   display: flex;
@@ -83,7 +83,7 @@ const Container = styled.div`
   height: 100vh;
 `
 const Content = styled.div`
-  width: 480px;
+  width: 560px;
 `
 const Education = styled.div`
   line-height: 24px;
@@ -102,7 +102,7 @@ const School = styled.div`
   font-weight: 600;
 `
 const Title = styled.div`
-  font-size: 40px;
+  font-size: 45px;
   margin-bottom: 26px;
   margin-top: -3vh;
   font-family: 'Lobster', cursive;

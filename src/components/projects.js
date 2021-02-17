@@ -39,7 +39,7 @@ const Projects = () => {
       <Project href={data.link.url} key={data.image.url} target="_blank">
         <ProjectTitle>{title}</ProjectTitle>
         <ImageCont>
-          <Image style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-5px"}} src={data.image.url} />
+          <Image style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}} src={data.image.url} />
         </ImageCont>
         <Description>{data.description[0].text}</Description>
       </Project>
@@ -65,7 +65,7 @@ const Container = styled.div`
 `
 const Description = styled.div`
   background: rgba(26, 25, 34, 0.85);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
   padding: 10px 15px 15px 15px;
   font-size: 14px;
   font-weight: 300;
@@ -76,13 +76,14 @@ const Image = styled.img`
   width: 246px;
   height: 255px;
   object-fit: cover;
+  transition: all 0.3s ease;
 `
 const ImageCont = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
   background: rgba(26, 25, 34, 0.85);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
 `
 const Project = styled.a`
   font-size: 15px;
@@ -95,21 +96,20 @@ const Project = styled.a`
   color: white;
   text-decoration: none;
   border-radius: 16px;
+  transition: all 0.3s ease;
   &:hover {
-    transition: all 0.2s ease;
     margin-top: -10px;
     box-shadow: rgba(0, 0, 0, 1) 0px 0px 10px;
   }
   &:hover ${Image} {
-    transition: all 0.3s ease;
-    height: 270px;
+    height: 266px;
   }
 `
 const ProjectTitle = styled.div`
   padding: 12px 15px 0px 15px;
   font-size: 13.5px;
   background: rgba(26, 25, 34, 0.85);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
   height: 40px;
   z-index: 1;
   font-weight: 600;

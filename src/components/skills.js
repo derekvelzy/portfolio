@@ -109,7 +109,7 @@ const Name = styled.div`
 const Skill = styled.div`
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
   background: rgba(26, 25, 34, 0.85);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
   width: 144px;
   height: 110px;
   margin: 10px;

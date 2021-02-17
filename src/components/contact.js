@@ -75,6 +75,11 @@ const Info = styled.div`
   flex-direction: column;
   justify-content: space-between;
   line-height: 27px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+  background: rgba(26, 25, 34, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 28px;
+  border-radius: 20px;
 `
 const Item = styled.div`
   display: flex;
@@ -98,7 +103,7 @@ const Phone = styled.img`
 const Title = styled.div`
   margin-top: -10vh;
   letter-spacing: 1px;
-  font-size: 40px;
+  font-size: 45px;
   margin-bottom: 20px;
   font-family: 'Lobster', cursive;
 `

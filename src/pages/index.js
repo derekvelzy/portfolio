@@ -63,8 +63,8 @@ const Button = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.4s ease;
   &:hover {
-    transition: all 0.35s ease;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px;
     background: rgb(47, 44, 56);
   }
