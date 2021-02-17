@@ -41,7 +41,7 @@ const Projects = () => {
       <Project
         href={data.link.url}
         key={data.image.url}
-        arget="_blank"
+        target="_blank"
         data-aos={title === 'Grouply' || title === 'Shadetree' || title === 'Postcard' ? 'fade-right' : 'fade-left'}
         data-aos-offset="50"
         onMouseEnter={() => setHover(true)}
