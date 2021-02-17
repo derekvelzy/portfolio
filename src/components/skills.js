@@ -75,6 +75,7 @@ const Skills = () => {
 
   return (
     <Container>
+      <Title>Skills</Title>
       <Boxes data-aos="fade-right">
         {row1.map((i) => (
           <Skill key={i.name}>
@@ -105,7 +106,7 @@ const Skills = () => {
 
 const Boxes = styled.div`
   width: 860px;
-  height: 25vh;
+  height: 24vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -144,6 +145,14 @@ const Skill = styled.div`
     transition: all 0.3s ease;
     height: 76px;
   }
+`
+const Title = styled.div`
+  font-size: 45px;
+  margin-bottom: 0vh;
+  margin-top: -2vh;
+  font-family: 'Lobster', cursive;
+  letter-spacing: 1px;
+  text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
 `
 
 export default Skills;

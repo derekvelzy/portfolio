@@ -11,14 +11,14 @@ const Contact = () => {
         <Item data-aos="fade-up">
           <Gmail src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/gmailClear.png" />
           <div>
-            <div>Email Me</div>
+            <div style={{ fontWeight: 600 }}>Email Me</div>
             <div>dmvelzy@gmail.com</div>
           </div>
         </Item>
         <Item data-aos="fade-up">
           <Phone src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/phoneIcon.png" />
           <div>
-            <div>Give me a ring</div>
+            <div style={{ fontWeight: 600 }}>Give me a ring</div>
             <div>(925) 200-7710</div>
           </div>
         </Item>
@@ -27,7 +27,7 @@ const Contact = () => {
             <LinkedIn src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/linkedinClearBlue.jpg" />
           </a>
           <div style={{ marginLeft: "10px" }}>
-            <div>Let's Connect</div>
+            <div style={{ fontWeight: 600 }}>Let's Connect</div>
             <Link target="_blank" href="https://www.linkedin.com/in/dvelzy/">linkedin.com/in/dvelzy</Link>
           </div>
         </Item>
@@ -59,6 +59,7 @@ const Footer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 480px;
+  font-weight: 300;
 `
 const Gmail = styled.img`
   width: 60px;

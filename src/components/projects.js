@@ -32,6 +32,8 @@ const Projects = () => {
   }
   `)
 
+  const [hover, setHover] = useState(false);
+
   const projects = data.allPrismicProject.edges.map((node) => {
     const data = node.node.data.body[0].primary;
     const title = node.node.data.title[0].text;
@@ -42,10 +44,15 @@ const Projects = () => {
         arget="_blank"
         data-aos={title === 'Grouply' || title === 'Shadetree' || title === 'Postcard' ? 'fade-right' : 'fade-left'}
         data-aos-offset="50"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
       >
         <ProjectTitle>{title}</ProjectTitle>
         <ImageCont>
-          <Image style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}} src={data.image.url} />
+          <Image
+            style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}}
+            src={data.image.url}
+          />
         </ImageCont>
         <Description>{data.description[0].text}</Description>
       </Project>
@@ -81,8 +88,8 @@ const Description = styled.div`
   border-bottom-left-radius: 16px;
 `
 const Image = styled.img`
-  width: 246px;
-  height: 250px;
+  width: 240px;
+  height: 240px;
   object-fit: cover;
 `
 const ImageCont = styled.div`
@@ -122,7 +129,7 @@ const Project = styled.a`
   &:hover {
     transition: all 0.1s ease;
     box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px;
-    margin-top: -6px;
+    margin-top: -4px;
   }
   &:hover ${ProjectTitle} {
     transition: all 0.7s ease;
