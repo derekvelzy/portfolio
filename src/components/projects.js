@@ -98,6 +98,7 @@ const ImageCont = styled.div`
   justify-content: center;
   background: rgba(26, 25, 34, 0.85);
   backdrop-filter: blur(12px);
+  margin-top: -2px;
 `
 const LinksTitle = styled.div`
   margin-bottom: 2vh;
