@@ -51,7 +51,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
 `
 const Footer = styled.div`
@@ -69,20 +68,21 @@ const Gmail = styled.img`
 `
 const Info = styled.div`
   margin-top: 40px;
-  width: 290px;
+  width: 360px;
   height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   line-height: 27px;
+`
+const Item = styled.div`
+  display: flex;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
   background: rgba(26, 25, 34, 0.85);
   backdrop-filter: blur(12px);
   padding: 28px;
   border-radius: 20px;
-`
-const Item = styled.div`
-  display: flex;
+  margin: 10px;
 `
 const Link = styled.a`
   color: rgb(99, 139, 176);
@@ -95,16 +95,15 @@ const LinkedIn = styled.img`
   cursor: pointer;
 `
 const Phone = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
   display: flex;
-  margin-right: 40px;
+  margin-right: 46px;
 `
 const Title = styled.div`
-  margin-top: -10vh;
+  margin-top: 12vh;
   letter-spacing: 1px;
   font-size: 45px;
-  margin-bottom: 20px;
   font-family: 'Lobster', cursive;
 `
 

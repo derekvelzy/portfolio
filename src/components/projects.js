@@ -106,8 +106,8 @@ const Project = styled.a`
   }
 `
 const ProjectTitle = styled.div`
-  padding: 12px 15px 0px 15px;
-  font-size: 13.5px;
+  padding: 12px 0px 0px 15px;
+  font-size: 14.5px;
   background: rgba(26, 25, 34, 0.85);
   backdrop-filter: blur(12px);
   height: 40px;
