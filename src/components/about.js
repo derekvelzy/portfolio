@@ -107,6 +107,7 @@ const Title = styled.div`
   margin-top: -3vh;
   font-family: 'Lobster', cursive;
   letter-spacing: 1px;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
 `
 
 export default About;

@@ -105,6 +105,7 @@ const Title = styled.div`
   letter-spacing: 1px;
   font-size: 45px;
   font-family: 'Lobster', cursive;
+  text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
 `
 
 export default Contact;
