@@ -149,7 +149,6 @@ const Skill = styled.div`
 const Title = styled.div`
   font-size: 45px;
   margin-bottom: 0vh;
-  margin-top: -2vh;
   font-family: 'Lobster', cursive;
   letter-spacing: 1px;
   text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;

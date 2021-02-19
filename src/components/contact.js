@@ -6,8 +6,8 @@ const Contact = () => {
 
   return (
     <Container>
-      <Title>Contact Info</Title>
       <Info>
+        <Title>Contact Info</Title>
         <Item data-aos="fade-up">
           <Gmail src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/gmailClear.png" />
           <div>
@@ -51,6 +51,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100vh;
 `
 const Footer = styled.div`
@@ -68,9 +69,8 @@ const Gmail = styled.img`
   margin-right: 40px;
 `
 const Info = styled.div`
-  margin-top: 40px;
   width: 360px;
-  height: 280px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -102,11 +102,12 @@ const Phone = styled.img`
   margin-right: 46px;
 `
 const Title = styled.div`
-  margin-top: 12vh;
   letter-spacing: 1px;
   font-size: 45px;
   font-family: 'Lobster', cursive;
   text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
+  align-self: center;
+  margin-bottom: 4vh;
 `
 
 export default Contact;
