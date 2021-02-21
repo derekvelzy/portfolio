@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
 import { Line } from './home.js';

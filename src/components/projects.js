@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
 
 const webps = [
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/a_grouply.webp',
-  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/b_Shadetree.webp',
+  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/b_shadetree.webp',
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/Main.webp',
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/hindsightSC.webp',
-  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/Home.webp',
+  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/e_ringmeup.webp',
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/sdcDiagram.webp'
 ]
 
