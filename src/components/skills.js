@@ -125,6 +125,10 @@ const Logo = styled.img`
   height: 70px;
   object-fit: cover;
 `
+const LogoSource = styled.source`
+  height: 70px;
+  object-fit: cover;
+`
 const Name = styled.div`
   font-size: 13.5px;
 `

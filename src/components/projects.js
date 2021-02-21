@@ -2,6 +2,15 @@ import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
 
+const webps = [
+  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/a_grouply.webp',
+  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/b_Shadetree.webp',
+  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/Main.webp',
+  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/hindsightSC.webp',
+  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/Home.webp',
+  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/sdcDiagram.webp'
+]
+
 const Projects = () => {
   const data = useStaticQuery(graphql`
   {
@@ -33,8 +42,9 @@ const Projects = () => {
   `)
 
   const [hover, setHover] = useState(false);
-
+  let i = -1;
   const projects = data.allPrismicProject.edges.map((node) => {
+    i++;
     const data = node.node.data.body[0].primary;
     const title = node.node.data.title[0].text;
     return (
@@ -49,10 +59,16 @@ const Projects = () => {
       >
         <ProjectTitle>{title}</ProjectTitle>
         <ImageCont>
-          <Image
-            style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}}
-            src={data.image.url}
-          />
+          <picture>
+            <ImageSource
+              style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}}
+              srcSet={webps[i]}
+            />
+            <Image
+              style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}}
+              src={data.image.url}
+            />
+          </picture>
         </ImageCont>
         <Description>{data.description[0].text}</Description>
       </Project>
@@ -88,6 +104,11 @@ const Description = styled.div`
   border-bottom-left-radius: 16px;
 `
 const Image = styled.img`
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+`
+const ImageSource = styled.source`
   width: 240px;
   height: 240px;
   object-fit: cover;

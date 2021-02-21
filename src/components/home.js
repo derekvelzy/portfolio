@@ -11,11 +11,26 @@ const messages = [
   'Camper'
 ];
 const images = [
-  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/IMG_0584.jpg',
-  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/wheelie.png',
-  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/IMG_4281.jpg',
-  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/IMG_4279.jpg',
-  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/IMG_4280.jpg'
+  {
+    webp: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/a.webp',
+    jpg: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/IMG_0584.jpg'
+  },
+  {
+    webp: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/b.webp',
+    jpg: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/wheelie.jpg'
+  },
+  {
+    webp: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/c.webp',
+    jpg: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/IMG_4281.jpg'
+  },
+  {
+    webp: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/d.webp',
+    jpg: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/IMG_4279.jpg'
+  },
+  {
+    webp: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/e.webp',
+    jpg: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/IMG_4280.jpg'
+  }
 ];
 
 const Home = () => {
@@ -57,7 +72,10 @@ const Home = () => {
   const [selected, setSelected] = useState(
     <CSSTransition key={0} timeout={700} classNames="transition">
       <TransContainer>
-        <Pic src={images[0]} />
+        <Pic>
+          <source srcSet={images[0].webp} />
+          <Image src={images[0].jpg} />
+        </Pic>
         <Title>{messages[0]}</Title>
       </TransContainer>
     </CSSTransition>
@@ -69,7 +87,10 @@ const Home = () => {
         setSelected(
           <CSSTransition key={0} timeout={700} classNames="transition">
             <TransContainer>
-              <Pic src={images[0]} />
+              <Pic>
+                <source srcSet={images[0].webp} />
+                <Image src={images[0].jpg} />
+              </Pic>
               <Title>{messages[0]}</Title>
             </TransContainer>
           </CSSTransition>
@@ -79,7 +100,10 @@ const Home = () => {
         setSelected(
           <CSSTransition key={frame + 1} timeout={700} classNames="transition">
             <TransContainer>
-              <Pic src={images[frame + 1]} />
+              <Pic>
+                <source srcSet={images[frame + 1].webp} />
+                <Image src={images[frame + 1].jpg} />
+              </Pic>
               <Title>{messages[frame + 1]}</Title>
             </TransContainer>
           </CSSTransition>
@@ -179,6 +203,22 @@ const Icons = styled.div`
   display: flex;
   justify-content: space-between;
 `
+const Image = styled.img`
+  height: 24vh;
+  width: 24vh;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px;
+  border: 2px solid white;
+`
+const ImageSource = styled.source`
+  height: 24vh;
+  width: 24vh;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px;
+  border: 2px solid white;
+`
 export const Line = styled.div`
   border-bottom: 1px solid white;
   width: 400px;
@@ -205,14 +245,8 @@ const Name = styled.div`
   margin-bottom: 38vh;
   text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
 `
-const Pic = styled.img`
-  height: 24vh;
-  width: 24vh;
-  border-radius: 50%;
-  object-fit: cover;
+const Pic = styled.picture`
   margin-bottom: 3vh;
-  border: 2px solid white;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 15px;
 `
 const TransContainer = styled.div`
   position: absolute;
