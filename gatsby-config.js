@@ -8,6 +8,9 @@ module.exports = {
     "gatsby-plugin-preact",
     "gatsby-plugin-styled-components",
     {
+      resolve: 'gatsby-plugin-brotli'
+    },
+    {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         devMode: true,

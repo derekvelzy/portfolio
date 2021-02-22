@@ -27,7 +27,11 @@ const Contact = () => {
           </a>
           <div>
             <div style={{ fontWeight: 600 }}>Let's Connect</div>
-            <Link target="_blank" href="https://www.linkedin.com/in/dvelzy/">linkedin.com/in/dvelzy</Link>
+            <Link
+              rel="noopener"
+              target="_blank"
+              href="https://www.linkedin.com/in/dvelzy/"
+            >linkedin.com/in/dvelzy</Link>
           </div>
         </Item>
       </Info>

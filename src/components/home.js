@@ -122,10 +122,18 @@ const Home = () => {
       </TransitionGroup>
       <Line />
       <Icons>
-        <a target="_blank" href={data.prismicHome.data.body[1].items[0].github.url}>
+        <a
+          rel="noopener"
+          target="_blank"
+          href={data.prismicHome.data.body[1].items[0].github.url}
+        >
           <Git alt="github logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/github-icon-white-6.jpg" />
         </a>
-        <a target="_blank" href={data.prismicHome.data.body[1].items[0].linkedin.url}>
+        <a
+          el="noopener"
+          target="_blank"
+          href={data.prismicHome.data.body[1].items[0].linkedin.url}
+        >
           <LinkedIn alt="linkedin logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/linkedinWhite.png" />
         </a>
         <a href={data.prismicHome.data.body[1].items[0].gmail.url}>
