@@ -35,7 +35,7 @@ const About = () => {
       <div style={{height: '26px'}}/>
       <Box data-aos="fade-up">
         <Education>
-          <Logo src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/asu.png" />
+          <Logo alt="asu logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/asu.png" />
           <Content>
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
               <School>Arizona State University</School>
@@ -46,7 +46,7 @@ const About = () => {
         </Education>
         <div style={{height: '16px'}}/>
         <Education>
-          <Logo src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/hackreactor.png" />
+          <Logo alt="hack reactor logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/hackreactor.png" />
           <Content>
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
               <School>Hack Reactor, San Francisco</School>

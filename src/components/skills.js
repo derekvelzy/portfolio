@@ -79,7 +79,7 @@ const Skills = () => {
       <Boxes data-aos="fade-right">
         {row1.map((i) => (
           <Skill key={i.name}>
-            <Logo src={i.img}/>
+            <Logo alt="skills logo" src={i.img}/>
             <Name>{i.name}</Name>
           </Skill>
         ))}
@@ -87,7 +87,7 @@ const Skills = () => {
       <Boxes data-aos="fade-left">
         {row2.map((i) => (
           <Skill key={i.name}>
-            <Logo src={i.img}/>
+            <Logo alt="skills logo" src={i.img}/>
             <Name>{i.name}</Name>
           </Skill>
         ))}
@@ -95,7 +95,7 @@ const Skills = () => {
       <Boxes data-aos="fade-right">
         {row3.map((i) => (
           <Skill key={i.name}>
-            <Logo src={i.img}/>
+            <Logo alt="skills logo" src={i.img}/>
             <Name>{i.name}</Name>
           </Skill>
         ))}

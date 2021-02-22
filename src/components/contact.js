@@ -8,14 +8,14 @@ const Contact = () => {
       <Info>
         <Title>Contact Info</Title>
         <Item data-aos="fade-up">
-          <Gmail src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/gmailClear.png" />
+          <Gmail alt="gmail logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/gmailClear.png" />
           <div>
             <div style={{ fontWeight: 600 }}>Email Me</div>
             <div>dmvelzy@gmail.com</div>
           </div>
         </Item>
         <Item data-aos="fade-up">
-          <Phone src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/phoneIcon.png" />
+          <Phone alt="phone icon" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/phoneIcon.png" />
           <div>
             <div style={{ fontWeight: 600 }}>Give me a ring</div>
             <div>(925) 200-7710</div>
@@ -23,7 +23,7 @@ const Contact = () => {
         </Item>
         <Item data-aos="fade-up">
           <a target="_blank" href="https://www.linkedin.com/in/dvelzy/">
-            <LinkedIn src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/linkedinClearBlue.jpg" />
+            <LinkedIn alt="linkedin logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/linkedinClearBlue.jpg" />
           </a>
           <div style={{ marginLeft: "10px" }}>
             <div style={{ fontWeight: 600 }}>Let's Connect</div>

@@ -73,8 +73,8 @@ const Home = () => {
     <CSSTransition key={0} timeout={700} classNames="transition">
       <TransContainer>
         <Pic>
-          <source srcSet={images[0].webp} />
-          <Image src={images[0].jpg} />
+          <source alt="derek velzy" srcSet={images[0].webp} />
+          <Image alt="derek velzy" src={images[0].jpg} />
         </Pic>
         <Title>{messages[0]}</Title>
       </TransContainer>
@@ -88,8 +88,8 @@ const Home = () => {
           <CSSTransition key={0} timeout={700} classNames="transition">
             <TransContainer>
               <Pic>
-                <source srcSet={images[0].webp} />
-                <Image src={images[0].jpg} />
+                <source alt="derek velzy" srcSet={images[0].webp} />
+                <Image alt="derek velzy" src={images[0].jpg} />
               </Pic>
               <Title>{messages[0]}</Title>
             </TransContainer>
@@ -101,8 +101,8 @@ const Home = () => {
           <CSSTransition key={frame + 1} timeout={700} classNames="transition">
             <TransContainer>
               <Pic>
-                <source srcSet={images[frame + 1].webp} />
-                <Image src={images[frame + 1].jpg} />
+                <source alt="derek velzy" srcSet={images[frame + 1].webp} />
+                <Image alt="derek velzy" src={images[frame + 1].jpg} />
               </Pic>
               <Title>{messages[frame + 1]}</Title>
             </TransContainer>
@@ -123,13 +123,13 @@ const Home = () => {
       <Line />
       <Icons>
         <a target="_blank" href={data.prismicHome.data.body[1].items[0].github.url}>
-          <Git src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/github-icon-white-6.jpg" />
+          <Git alt="github logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/github-icon-white-6.jpg" />
         </a>
         <a target="_blank" href={data.prismicHome.data.body[1].items[0].linkedin.url}>
-          <LinkedIn src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/linkedinWhite.png" />
+          <LinkedIn alt="linkedin logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/linkedinWhite.png" />
         </a>
         <a href={data.prismicHome.data.body[1].items[0].gmail.url}>
-          <Gmail src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/emailWhite.png" />
+          <Gmail alt="email logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/emailWhite.png" />
         </a>
       </Icons>
     </Container>

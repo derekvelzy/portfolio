@@ -62,10 +62,12 @@ const Projects = () => {
           <picture>
             <ImageSource
               style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}}
+              alt={`${title} project`}
               srcSet={webps[i]}
             />
             <Image
               style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}}
+              alt={`${title} project`}
               src={data.image.url}
             />
           </picture>

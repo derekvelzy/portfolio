@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components';
 import { Parallax, Background } from 'react-parallax';
+import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 import Aos from 'aos';
-import "aos/dist/aos.css";
+import 'aos/dist/aos.css';
 
 const Home = loadable(() => import('../components/home.js'));
 const About = loadable(() => import('../components/about.js'));
@@ -30,6 +31,11 @@ const IndexPage = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Derek Velzy</title>
+        <link rel="site" href="http://dvelzyportfolio.com" />
+        <meta name="Description" content="derek velzy's portfolio site" />
+      </Helmet>
       <Switch>
         <Button onClick={homeScroll}>home</Button>
         <Button onClick={aboutScroll}>about</Button>
@@ -42,9 +48,11 @@ const IndexPage = () => {
           <picture>
             <source
               style={{width: '100vw'}}
+              alt="webp Federico Bottos"
               srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/botts250.webp"/>
             <img
               style={{width: '100vw'}}
+              alt="Federico Bottos"
               src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/federico-bottos-7veINmpZL4Y-unsplash.jpg"
             />
           </picture>
