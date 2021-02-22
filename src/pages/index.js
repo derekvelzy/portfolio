@@ -1,10 +1,14 @@
 import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components';
 import { Parallax, Background } from 'react-parallax';
+// import { animated, useSpring } from "react-spring";
+// import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+
+// const calc = (o) => `translateY(${o * 0.2}px)`;
 
 const Home = loadable(() => import('../components/home.js'));
 const About = loadable(() => import('../components/about.js'));
@@ -16,6 +20,21 @@ const IndexPage = () => {
   useEffect(() => {
     Aos.init({duration: 700});
   }, []);
+
+  // const ref = useRef();
+  // const [{offset}, set] = useSpring(() => ({ offset: 0 }));
+
+  // const handleScroll = () => {
+  //   const offset = ref.current.getBoundingClientRect().top;
+  //   set({ offset });
+  // }
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   }
+  // })
 
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
@@ -73,6 +92,16 @@ const IndexPage = () => {
   )
 };
 
+const BG = styled.picture`
+  position: fixed;
+  z-index: -1;
+`
+const BGImg = styled.img`
+  position: fixed;
+`
+const BGSource = styled.source`
+  position: fixed;
+`
 const Button = styled.div`
   background: rgba(26, 25, 34);
   color: white;
