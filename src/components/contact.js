@@ -22,7 +22,7 @@ const Contact = () => {
           </div>
         </Item>
         <Item data-aos="fade-up">
-          <a target="_blank" href="https://www.linkedin.com/in/dvelzy/">
+          <a rel="noopener" target="_blank" href="https://www.linkedin.com/in/dvelzy/">
             <LinkedIn alt="linkedin logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/linkedinClearBlue.jpg" />
           </a>
           <div>
