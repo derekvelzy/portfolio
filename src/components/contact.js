@@ -35,7 +35,7 @@ const Contact = () => {
         <div>
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a href="https://www.gatsbyjs.com" style={{color: 'rgb(230, 161, 255)'}}>Gatsby</a>
         </div>
         <div>Photograph by Federico Bottos</div>
       </Footer>

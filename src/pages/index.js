@@ -31,7 +31,11 @@ const IndexPage = () => {
 
   return (
     <Container>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: 'en',
+        }}
+      >
         <title>Derek Velzy</title>
         <link rel="site" href="http://dvelzyportfolio.com" />
         <meta name="Description" content="derek velzy's portfolio site" />
@@ -47,11 +51,11 @@ const IndexPage = () => {
         <Background>
           <picture>
             <source
-              style={{width: '100vw'}}
+              style={{width: '100vw', filter: 'brightness(85%)'}}
               alt="webp Federico Bottos"
               srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/botts250.webp"/>
             <img
-              style={{width: '100vw'}}
+              style={{width: '100vw', filter: 'brightness(85%)'}}
               alt="Federico Bottos"
               src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/federico-bottos-7veINmpZL4Y-unsplash.jpg"
             />
