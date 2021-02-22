@@ -104,16 +104,87 @@ const Description = styled.div`
   font-weight: 300;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
+  @media (max-width: 1135px) {
+    font-size: 14px;
+  }
+  @media (max-width: 550px) {
+    padding: 6px 6px8px 8px;
+    font-size: 13px;
+  }
+  @media (max-width: 470px) {
+    padding: 4px 4px 6px 4px;
+    font-size: 12px;
+  }
 `
 const Image = styled.img`
   width: 240px;
   height: 240px;
   object-fit: cover;
+  @media (max-width: 1135px) {
+    width: 230px;
+  }
+  @media (max-width: 1060px) {
+    width: 220px;
+  }
+  @media (max-width: 950px) {
+    height: 180px;
+    width: 220px;
+  }
+  @media (max-width: 550px) {
+    height: 170px;
+    width: 200px;
+  }
+  @media (max-width: 470px) {
+    width: 180px;
+    height: 150px;
+  }
+  @media (max-width: 400px) {
+    width: 150px;
+    height: 140px;
+  }
+  @media (max-width: 350px) {
+    height: 130px;
+    width: 140px;
+  }
+  @media (max-width: 330px) {
+    height: 120px;
+    width: 134px;
+  }
 `
 const ImageSource = styled.source`
   width: 240px;
   height: 240px;
   object-fit: cover;
+  @media (max-width: 1135px) {
+    width: 230px;
+  }
+  @media (max-width: 1060px) {
+    width: 220px;
+  }
+  @media (max-width: 950px) {
+    height: 180px;
+    width: 220px;
+  }
+  @media (max-width: 550px) {
+    height: 170px;
+    width: 200px;
+  }
+  @media (max-width: 470px) {
+    width: 180px;
+    height: 150px;
+  }
+  @media (max-width: 400px) {
+    width: 150px;
+    height: 140px;
+  }
+  @media (max-width: 350px) {
+    height: 130px;
+    width: 140px;
+  }
+  @media (max-width: 330px) {
+    height: 120px;
+    width: 134px;
+  }
 `
 const ImageCont = styled.div`
   overflow: hidden;
@@ -126,6 +197,13 @@ const ImageCont = styled.div`
 const LinksTitle = styled.div`
   margin-bottom: 2vh;
   text-shadow: rgba(0, 0, 0, 0.7) 0px 0px 10px;
+  @media (max-width: 950px) {
+    margin-bottom: 10px;
+  }
+  @media (max-width: 550px) {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
 `
 const ProjectTitle = styled.div`
   padding: 12px 0px 0px 15px;
@@ -137,6 +215,17 @@ const ProjectTitle = styled.div`
   font-weight: 600;
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
+  @media (max-width: 1135px) {
+    font-size: 14px;
+  }
+  @media (max-width: 550px) {
+    padding: 6px 0px 2px 8px;
+    font-size: 13px;
+  }
+  @media (max-width: 470px) {
+    padding: 4px 0px 1px 6px;
+    font-size: 12px;
+  }
 `
 const Project = styled.a`
   font-size: 15px;
@@ -170,6 +259,45 @@ const Project = styled.a`
     background: rgba(245, 245, 245, 0.75);
     color: black;
   }
+  @media (max-width: 1135px) {
+    width: 240px;
+    font-size: 14px;
+  }
+  @media (max-width: 1060px) {
+    width: 230px;
+    font-size: 13px;
+  }
+  @media (max-width: 950px) {
+    width: 240px;
+    margin-bottom: 20px;
+    height: 200px;
+  }
+  @media (max-width: 880px) {
+    height: 200px;
+  }
+  @media (max-width: 550px) {
+    width: 214px;
+    margin-bottom: 10px;
+    height: 180px;
+  }
+  @media (max-width: 470px) {
+    width: 190px;
+    margin-bottom: 10px;
+    height: 170px;
+  }
+  @media (max-width: 400px) {
+    width: 160px;
+    margin-bottom: 10px;
+    height: 150px;
+  }
+  @media (max-width: 350px) {
+    margin-bottom: 10px;
+    width: 150px;
+  }
+  @media (max-width: 330px) {
+    margin-bottom: 10px;
+    width: 140px;
+  }
 `
 const ProjectsCont = styled.div`
   display: flex;
@@ -177,6 +305,30 @@ const ProjectsCont = styled.div`
   height: 590px;
   justify-content: space-between;
   flex-wrap: wrap;
+  @media (max-width: 1135px) {
+    width: 780px;
+  }
+  @media (max-width: 1060px) {
+    width: 720px;
+  }
+  @media (max-width: 950px) {
+    width: 500px;
+  }
+  @media (max-width: 550px) {
+    width: 440px;
+  }
+  @media (max-width: 470px) {
+    width: 390px;
+  }
+  @media (max-width: 400px) {
+    width: 330px;
+  }
+  @media (max-width: 350px) {
+    width: 310px;
+  }
+  @media (max-width: 330px) {
+    width: 284px;
+  }
 `
 const Title = styled.div`
   margin-bottom: 1vh;
@@ -184,6 +336,15 @@ const Title = styled.div`
   font-size: 45px;
   font-family: 'Lobster', cursive;
   text-shadow: rgba(0, 0, 0, 0.7) 0px 0px 10px;
+  @media (max-width: 950px) {
+    font-size: 40px;
+  }
+  @media (max-width: 420px) {
+    font-size: 35px;
+  }
+  @media (max-width: 330px) {
+    font-size: 30px;
+  }
 `
 
 export default Projects;

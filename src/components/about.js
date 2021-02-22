@@ -71,6 +71,37 @@ const Box = styled.div`
   flex-direction: column;
   line-height: 27px;
   border-radius: 20px;
+  @media (max-width: 900px) {
+    font-size: 15.5px;
+    width: 516px;
+  }
+  @media (max-width: 790px) {
+    font-size: 15px;
+    width: 460px;
+  }
+  @media (max-width: 550px) {
+    font-size: 14px;
+    line-height: 24px;
+    width: 400px;
+    padding: 20px;
+  }
+  @media (max-width: 470px) {
+    font-size: 13px;
+    line-height: 24px;
+    width: 340px;
+    padding: 16px;
+  }
+  @media (max-width: 420px) {
+    font-size: 12px;
+    line-height: 20px;
+    width: 300px;
+    padding: 12px;
+  }
+  @media (max-width: 350px) {
+    font-size: 12px;
+    width: 260px;
+    padding: 12px;
+  }
 `
 const Container = styled.div`
   font-family: 'Montserrat', sans-serif;
@@ -88,6 +119,12 @@ const Content = styled.div`
 const Education = styled.div`
   line-height: 24px;
   display: flex;
+  @media (max-width: 420px) {
+    line-height: 20px;
+  }
+  @media (max-width: 350px) {
+    line-height: 20px;
+  }
 `
 const Logo = styled.img`
   height: 50px;
@@ -107,6 +144,18 @@ const Title = styled.div`
   font-family: 'Lobster', cursive;
   letter-spacing: 1px;
   text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+  @media (max-width: 470px) {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 420px) {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  @media (max-width: 330px) {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
 `
 
 export default About;

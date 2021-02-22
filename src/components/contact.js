@@ -25,7 +25,7 @@ const Contact = () => {
           <a target="_blank" href="https://www.linkedin.com/in/dvelzy/">
             <LinkedIn alt="linkedin logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/linkedinClearBlue.jpg" />
           </a>
-          <div style={{ marginLeft: "10px" }}>
+          <div>
             <div style={{ fontWeight: 600 }}>Let's Connect</div>
             <Link target="_blank" href="https://www.linkedin.com/in/dvelzy/">linkedin.com/in/dvelzy</Link>
           </div>
@@ -66,6 +66,21 @@ const Gmail = styled.img`
   height: 44px;
   display: flex;
   margin-right: 40px;
+  @media (max-width: 950px) {
+    width: 54px;
+    height: 38px;
+    margin-right: 36px;
+  }
+  @media (max-width: 420px) {
+    width: 48px;
+    height: 32px;
+    margin-right: 28px;
+  }
+  @media (max-width: 330px) {
+    width: 42px;
+    height: 30px;
+    margin-right: 22px;
+  }
 `
 const Info = styled.div`
   width: 360px;
@@ -74,15 +89,39 @@ const Info = styled.div`
   flex-direction: column;
   justify-content: space-between;
   line-height: 27px;
+  @media (max-width: 950px) {
+    width: 330px;
+    font-size: 14px;
+  }
+  @media (max-width: 420px) {
+    width: 270px;
+    font-size: 12px;
+  }
+  @media (max-width: 330px) {
+    width: 220px;
+    font-size: 11px;
+  }
 `
 const Item = styled.div`
   display: flex;
+  align-items: center;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
   background: rgba(26, 25, 34, 0.85);
   backdrop-filter: blur(12px);
   padding: 28px;
   border-radius: 20px;
   margin: 10px;
+  @media (max-width: 950px) {
+    padding: 24px;
+  }
+  @media (max-width: 420px) {
+    margin: 6px;
+    padding: 22px;
+  }
+  @media (max-width: 330px) {
+    margin: 6px;
+    padding: 16px;
+  }
 `
 const Link = styled.a`
   color: rgb(99, 139, 176);
@@ -91,14 +130,44 @@ const LinkedIn = styled.img`
   width: 54px;
   height: 54px;
   display: flex;
-  margin-right: 40px;
+  margin-right: 50px;
   cursor: pointer;
+  @media (max-width: 950px) {
+    width: 48px;
+    height: 48px;
+    margin-right: 40px;
+  }
+  @media (max-width: 420px) {
+    width: 42px;
+    height: 42px;
+    margin-right: 30px;
+  }
+  @media (max-width: 330px) {
+    width: 36px;
+    height: 36px;
+    margin-right: 24px;
+  }
 `
 const Phone = styled.img`
   width: 54px;
   height: 54px;
   display: flex;
   margin-right: 46px;
+  @media (max-width: 950px) {
+    width: 48px;
+    height: 48px;
+    margin-right: 36px;
+  }
+  @media (max-width: 420px) {
+    width: 42px;
+    height: 42px;
+    margin-right: 28px;
+  }
+  @media (max-width: 330px) {
+    width: 36px;
+    height: 36px;
+    margin-right: 22px;
+  }
 `
 const Title = styled.div`
   letter-spacing: 1px;
@@ -107,6 +176,15 @@ const Title = styled.div`
   text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
   align-self: center;
   margin-bottom: 4vh;
+  @media (max-width: 950px) {
+    font-size: 40px;
+  }
+  @media (max-width: 420px) {
+    font-size: 35px;
+  }
+  @media (max-width: 330px) {
+    font-size: 30px;
+  }
 `
 
 export default Contact;

@@ -83,8 +83,20 @@ const Skills = () => {
             <Name>{i.name}</Name>
           </Skill>
         ))}
+        {row2.map((i) => (
+          <Skill key={i.name}>
+            <Logo alt="skills logo" src={i.img}/>
+            <Name>{i.name}</Name>
+          </Skill>
+        ))}
+        {row3.map((i) => (
+          <Skill key={i.name}>
+            <Logo alt="skills logo" src={i.img}/>
+            <Name>{i.name}</Name>
+          </Skill>
+        ))}
       </Boxes>
-      <Boxes data-aos="fade-left">
+      {/* <Boxes data-aos="fade-left">
         {row2.map((i) => (
           <Skill key={i.name}>
             <Logo alt="skills logo" src={i.img}/>
@@ -99,17 +111,43 @@ const Skills = () => {
             <Name>{i.name}</Name>
           </Skill>
         ))}
-      </Boxes>
+      </Boxes> */}
     </Container>
   )
 };
 
 const Boxes = styled.div`
   width: 860px;
-  height: 24vh;
+  height: 75vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  @media (max-width: 1130px) {
+    width: 800px;
+  }
+  @media (max-width: 1070px) {
+    width: 720px;
+    height: 65vh;
+  }
+  @media (max-width: 930px) {
+    width: 600px;
+  }
+  @media (max-width: 820px) {
+    width: 500px;
+  }
+  @media (max-width: 600px) {
+    width: 420px;
+  }
+  @media (max-width: 460px) {
+    width: 360px;
+  }
+  @media (max-width: 360px) {
+    width: 310px;
+  }
+  @media (max-width: 300px) {
+    width: 280px;
+  }
 `
 const Container = styled.div`
   font-family: 'Montserrat', sans-serif;
@@ -124,13 +162,65 @@ const Container = styled.div`
 const Logo = styled.img`
   height: 70px;
   object-fit: cover;
+  @media (max-width: 1130px) {
+    height: 65px;
+  }
+  @media (max-width: 1070px) {
+    height: 60px;
+  }
+  @media (max-width: 820px) {
+    height: 50px;
+  }
+  @media (max-width: 600px) {
+    height: 42px;
+  }
+  @media (max-width: 460px) {
+    height: 36px;
+  }
+  @media (max-width: 360px) {
+    height: 30px;
+  }
+  @media (max-width: 300px) {
+    height: 24px;
+  }
 `
 const LogoSource = styled.source`
   height: 70px;
   object-fit: cover;
+  @media (max-width: 1130px) {
+    height: 65px;
+  }
+  @media (max-width: 1070px) {
+    height: 60px;
+  }
+  @media (max-width: 820px) {
+    height: 50px;
+  }
+  @media (max-width: 600px) {
+    height: 42px;
+  }
+  @media (max-width: 460px) {
+    height: 36px;
+  }
+  @media (max-width: 360px) {
+    height: 30px;
+  }
+  @media (max-width: 300px) {
+    height: 24px;
+  }
 `
 const Name = styled.div`
   font-size: 13.5px;
+  text-align: center;
+  @media (max-width: 1070px) {
+    font-size: 12px;
+  }
+  @media (max-width: 820px) {
+    font-size: 11px;
+  }
+  @media (max-width: 360px) {
+    font-size: 10px;
+  }
 `
 const Skill = styled.div`
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
@@ -149,6 +239,34 @@ const Skill = styled.div`
     transition: all 0.3s ease;
     height: 76px;
   }
+  @media (max-width: 1130px) {
+    width: 134px;
+    height: 100px;
+  }
+  @media (max-width: 1070px) {
+    width: 120px;
+    height: 92px;
+  }
+  @media (max-width: 820px) {
+    width: 105px;
+    height: 85px;
+  }
+  @media (max-width: 600px) {
+    width: 115px;
+    height: 70px;
+  }
+  @media (max-width: 460px) {
+    width: 100px;
+    height: 60px;
+  }
+  @media (max-width: 360px) {
+    width: 80px;
+    height: 55px;
+  }
+  @media (max-width: 300px) {
+    width: 70px;
+    height: 50px;
+  }
 `
 const Title = styled.div`
   font-size: 45px;
@@ -156,6 +274,15 @@ const Title = styled.div`
   font-family: 'Lobster', cursive;
   letter-spacing: 1px;
   text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
+  @media (max-width: 950px) {
+    font-size: 40px;
+  }
+  @media (max-width: 420px) {
+    font-size: 35px;
+  }
+  @media (max-width: 330px) {
+    font-size: 30px;
+  }
 `
 
 export default Skills;

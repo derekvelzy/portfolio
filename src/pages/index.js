@@ -103,6 +103,13 @@ const Switch = styled.div`
   margin-top: 50px;
   margin-left: 4%;
   box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 10px;
+  @media (max-width: 1000px) {
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 export default IndexPage

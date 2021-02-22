@@ -138,6 +138,15 @@ const Home = () => {
 
 const Title = styled.div`
   font-size: 25px;
+  @media (max-width: 700px) {
+    font-size: 22px;
+  }
+  @media (max-width: 500px) {
+    font-size: 18px;
+  }
+  @media (max-width: 420px) {
+    font-size: 15px;
+  }
 `
 const Trans = styled.div`
   display: flex;
@@ -202,6 +211,12 @@ const Icons = styled.div`
   width: 300px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 420px) {
+    width: 230px;
+  }
+  @media (max-width: 330px) {
+    width: 200px;
+  }
 `
 const Image = styled.img`
   height: 24vh;
@@ -223,6 +238,12 @@ export const Line = styled.div`
   border-bottom: 1px solid white;
   width: 400px;
   margin-bottom: 30px;
+  @media (max-width: 420px) {
+    width: 270px;
+  }
+  @media (max-width: 330px) {
+    width: 230px;
+  }
 `
 const LinkedIn = styled.img`
   cursor: pointer;
@@ -238,12 +259,27 @@ const LinkedIn = styled.img`
 `
 const Name = styled.div`
   font-size: 45px;
-  margin-bottom: 20px;
   margin-top: 17vh;
   font-family: 'Lobster', cursive;
   letter-spacing: 1px;
   margin-bottom: 38vh;
   text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+  @media (max-width: 700px) {
+    font-size: 35px;
+    margin-bottom: 38.5vh;
+  }
+  @media (max-width: 500px) {
+    font-size: 30px;
+    margin-bottom: 39vh;
+  }
+  @media (max-width: 420px) {
+    font-size: 25px;
+    margin-bottom: 40vh;
+  }
+  @media (max-width: 330px) {
+    font-size: 20px;
+    margin-bottom: 40vh;
+  }
 `
 const Pic = styled.picture`
   margin-bottom: 3vh;
@@ -254,7 +290,6 @@ const TransContainer = styled.div`
   flex-direction: column;
   align-items: center;
   top: 28vh;
-  font-size: 25px;
   text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
 `
 
