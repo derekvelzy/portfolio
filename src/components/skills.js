@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
+import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
 
 const row1 = [
@@ -71,11 +72,31 @@ const row3 = [
   }
 ];
 
+const calc = (o) => `translateX(${o * 0.2}px)`;
+
 const Skills = () => {
+  const ref = useRef();
+  const [{offset}, set] = useSpring(() => ({ offset: 0 }));
+
+  const handleScroll = () => {
+    const offset = -1 * ref.current.getBoundingClientRect().top;
+    set({ offset });
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  })
 
   return (
-    <Container>
-      <Title>Skills</Title>
+    <Container ref={ref}>
+      <animated.div style={{
+        transform: offset.interpolate(calc)
+      }}>
+        <Title>Skills</Title>
+      </animated.div>
       <Boxes data-aos="fade-right">
         {row1.map((i) => (
           <Skill key={i.name}>

@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
+import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
 
 const webps = [
@@ -10,6 +11,8 @@ const webps = [
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/e_ringmeup.webp',
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/sdcDiagram.webp'
 ]
+
+const calc = (o) => `translateX(${o * 0.2}px)`;
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
@@ -40,6 +43,21 @@ const Projects = () => {
     }
   }
   `)
+
+  const ref = useRef();
+  const [{offset}, set] = useSpring(() => ({ offset: 0 }));
+
+  const handleScroll = () => {
+    const offset = ref.current.getBoundingClientRect().top;
+    set({ offset });
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  })
 
   const [hover, setHover] = useState(false);
   let i = -1;
@@ -80,9 +98,16 @@ const Projects = () => {
 
 
   return (
-    <Container>
-      <Title>Projects</Title>
-      <LinksTitle>Links to Repos on Github</LinksTitle>
+    <Container ref={ref}>
+      <animated.div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        transform: offset.interpolate(calc)
+      }}>
+        <Title>Projects</Title>
+        <LinksTitle>Links to Repos on Github</LinksTitle>
+      </animated.div>
       <ProjectsCont>{projects}</ProjectsCont>
     </Container>
   )

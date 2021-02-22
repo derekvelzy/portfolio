@@ -1,12 +1,36 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
+import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
 
+const calc = (o) => `translateX(${o * 0.2}px)`;
+
 const Contact = () => {
+  const ref = useRef();
+  const [{offset}, set] = useSpring(() => ({ offset: 0 }));
+
+  const handleScroll = () => {
+    const offset = ref.current.getBoundingClientRect().top;
+    set({ offset });
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  })
+
   return (
-    <Container>
-      <Info>
+    <Container ref={ref}>
+      <animated.div style={{
+        display: 'flex',
+        alignItems: 'center',
+        transform: offset.interpolate(calc)
+      }}>
         <Title>Contact Info</Title>
+      </animated.div>
+      <Info>
         <Item data-aos="fade-up">
           <Gmail alt="gmail logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/gmailClear.png" />
           <div>
@@ -104,7 +128,7 @@ const Gmail = styled.img`
 `
 const Info = styled.div`
   width: 360px;
-  height: 450px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -116,10 +140,12 @@ const Info = styled.div`
   @media (max-width: 420px) {
     width: 270px;
     font-size: 12px;
+    height: 360px;
   }
   @media (max-width: 330px) {
     width: 220px;
     font-size: 11px;
+    height: 320px;
   }
 `
 const Item = styled.div`

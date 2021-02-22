@@ -1,7 +1,10 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
+import { animated, useSpring } from "react-spring";
 import { Line } from './home.js';
+
+const calc = (o) => `translateX(${o * 0.2}px)`;
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -23,11 +26,30 @@ const About = () => {
       }
     }
   }
-  `)
+  `);
+
+  const ref = useRef();
+  const [{offset}, set] = useSpring(() => ({ offset: 0 }));
+
+  const handleScroll = () => {
+    const offset = -1 * ref.current.getBoundingClientRect().top;
+    set({ offset });
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  })
 
   return (
-    <Container>
-      <Title>About Me</Title>
+    <Container ref={ref}>
+      <animated.div style={{
+        transform: offset.interpolate(calc)
+      }}>
+        <Title>About Me</Title>
+      </animated.div>
       <Box data-aos="fade-up">
         <P>{data.prismicAbout.data.body[0].primary.paragraph.text}</P>
         <P>{data.prismicAbout.data.body[1].primary.paragraph.text}</P>
