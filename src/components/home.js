@@ -130,13 +130,13 @@ const Home = () => {
           <Git alt="github logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/github-icon-white-6.jpg" />
         </a>
         <a
-          el="noopener"
+          rel="noopener"
           target="_blank"
           href={data.prismicHome.data.body[1].items[0].linkedin.url}
         >
           <LinkedIn alt="linkedin logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/linkedinWhite.png" />
         </a>
-        <a href={data.prismicHome.data.body[1].items[0].gmail.url}>
+        <a rel="noopener" href={data.prismicHome.data.body[1].items[0].gmail.url}>
           <Gmail alt="email logo" src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/emailWhite.png" />
         </a>
       </Icons>
