@@ -121,8 +121,10 @@ const Education = styled.div`
   display: flex;
   @media (max-width: 420px) {
     line-height: 20px;
+    font-size: 10px;
   }
   @media (max-width: 350px) {
+    font-size: 10px;
     line-height: 20px;
   }
 `

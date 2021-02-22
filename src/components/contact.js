@@ -60,6 +60,22 @@ const Footer = styled.div`
   justify-content: space-between;
   width: 480px;
   font-weight: 300;
+  @media (max-width: 950px) {
+    font-size: 15px;
+    width: 450px;
+  }
+  @media (max-width: 500px) {
+    font-size: 13px;
+    width: 380px;
+  }
+  @media (max-width: 420px) {
+    font-size: 11px;
+    width: 320px;
+  }
+  @media (max-width: 340px) {
+    font-size: 10px;
+    width: 290px;
+  }
 `
 const Gmail = styled.img`
   width: 60px;
