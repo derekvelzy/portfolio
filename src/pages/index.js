@@ -2,17 +2,21 @@ import React, { useRef, useEffect, useState } from 'react'
 import styled from 'styled-components';
 import { Parallax, Background } from 'react-parallax';
 import { animated, useSpring } from "react-spring";
-// import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { Helmet } from 'react-helmet';
-import loadable from '@loadable/component';
+// import loadable from '@loadable/component';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
-const Home = loadable(() => import('../components/home.js'));
-const About = loadable(() => import('../components/about.js'));
-const Projects = loadable(() => import('../components/projects.js'));
-const Skills = loadable(() => import('../components/skills.js'));
-const Contact = loadable(() => import('../components/contact.js'));
+// const Home = loadable(() => import('../components/home.js'));
+// const About = loadable(() => import('../components/about.js'));
+// const Projects = loadable(() => import('../components/projects.js'));
+// const Skills = loadable(() => import('../components/skills.js'));
+// const Contact = loadable(() => import('../components/contact.js'));
+import Home from '../components/home.js';
+import About from '../components/about.js';
+import Projects from '../components/projects.js';
+import Skills from '../components/skills.js';
+import Contact from '../components/contact.js'
 
 const IndexPage = () => {
   useEffect(() => {
@@ -20,17 +24,6 @@ const IndexPage = () => {
   }, []);
 
   const [view, setView] = useState(0);
-
-  // const handleScroll = () => {
-  //   console.log(ref.current.getBoundingClientRect().top)
-  // }
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   }
-  // })
 
   const ref = useRef(null);
   const homeRef = useRef(null);
@@ -44,50 +37,6 @@ const IndexPage = () => {
   const projectsScroll = () => projectsRef.current.scrollIntoView({behavior: "smooth", block: "nearest"});
   const skillsScroll = () => skillsRef.current.scrollIntoView({behavior: "smooth", block: "nearest"});
   const contactScroll = () => contactRef.current.scrollIntoView({behavior: "smooth", block: "nearest"});
-
-  // return (
-  //   <Container ref={ref}>
-  //     <Helmet
-  //       htmlAttributes={{
-  //         lang: 'en',
-  //       }}
-  //     >
-  //       <title>Derek Velzy</title>
-  //       <link rel="site" href="http://dvelzyportfolio.com" />
-  //       <meta name="Description" content="derek velzy's portfolio site" />
-  //     </Helmet>
-  //     <Switch>
-  //       <Button onClick={homeScroll}>home</Button>
-  //       <Button onClick={aboutScroll}>about</Button>
-  //       <Button onClick={projectsScroll}>projects</Button>
-  //       <Button onClick={skillsScroll}>skills</Button>
-  //       <Button onClick={contactScroll}>contact</Button>
-  //     </Switch>
-  //     {/* <Parallax strength={2600}> */}
-  //     <Parallax pages={5}>
-  //       <ParallaxLayer speed={-0.4} offset={0}>
-  //         <picture>
-  //           <source
-  //             style={{width: '100vw', height: '350vh', objectFit: 'cover', filter: 'brightness(85%)', position: 'absolute', zIndex: '-1'}}
-  //             alt="webp Federico Bottos"
-  //             srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/botts250.webp"/>
-  //           <img
-  //             style={{width: '100vw', height: '350vh', objectFit: 'cover', filter: 'brightness(85%)', position: 'absolute', zIndex: '-1'}}
-  //             alt="Federico Bottos"
-  //             src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/federico-bottos-7veINmpZL4Y-unsplash.jpg"
-  //           />
-  //         </picture>
-  //         </ParallaxLayer>
-
-  //         <ParallaxLayer speed={0.1} offset={0}><div ref={homeRef}><Home /></div></ParallaxLayer>
-  //         <ParallaxLayer speed={0.1} offset={1}><div ref={aboutRef}><About /></div></ParallaxLayer>
-  //         <ParallaxLayer speed={0.1} offset={2}><div ref={projectsRef}><Projects /></div></ParallaxLayer>
-  //         <ParallaxLayer speed={0.1} offset={3}><div ref={skillsRef}><Skills /></div></ParallaxLayer>
-  //         <ParallaxLayer speed={0.1} offset={4}><div ref={contactRef}><Contact /></div></ParallaxLayer>
-
-  //     </Parallax>
-  //   </Container>
-  // )
 
   return (
     <Container>

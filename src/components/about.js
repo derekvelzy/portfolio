@@ -62,7 +62,7 @@ const About = () => {
           <source
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="webp Horner"
-            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGHorner.webp"/>
+            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGHorner150.webp"/>
           <img
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="Horner"

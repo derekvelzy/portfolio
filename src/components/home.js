@@ -142,7 +142,7 @@ const Home = () => {
           <source
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', zIndex: '0', marginLeft: '-50vw'}}
             alt="webp Farooqui"
-            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGFarooqui.webp"/>
+            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGFarooqui150.webp"/>
           <img
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', zIndex: '0', marginLeft: '-50vw'}}
             alt="Farooqui"

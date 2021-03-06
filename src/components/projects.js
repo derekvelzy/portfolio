@@ -114,7 +114,7 @@ const Projects = () => {
           <source
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="webp Korhonen"
-            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGKorhonen.webp"/>
+            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGKorhonen150.webp"/>
           <img
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="Kornonen"

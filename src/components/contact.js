@@ -37,7 +37,7 @@ const Contact = () => {
           <source
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(45%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="webp Bantersnaps"
-            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGBantersnaps.webp"/>
+            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGBantersnaps150.webp"/>
           <img
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(45%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="Bantersnaps"
