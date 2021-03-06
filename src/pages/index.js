@@ -1,14 +1,12 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import styled from 'styled-components';
 import { Parallax, Background } from 'react-parallax';
-// import { animated, useSpring } from "react-spring";
-// import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
+import { animated, useSpring } from "react-spring";
+// import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { Helmet } from 'react-helmet';
 import loadable from '@loadable/component';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-
-// const calc = (o) => `translateY(${o * 0.2}px)`;
 
 const Home = loadable(() => import('../components/home.js'));
 const About = loadable(() => import('../components/about.js'));
@@ -21,12 +19,10 @@ const IndexPage = () => {
     Aos.init({duration: 700});
   }, []);
 
-  // const ref = useRef();
-  // const [{offset}, set] = useSpring(() => ({ offset: 0 }));
+  const [view, setView] = useState(0);
 
   // const handleScroll = () => {
-  //   const offset = ref.current.getBoundingClientRect().top;
-  //   set({ offset });
+  //   console.log(ref.current.getBoundingClientRect().top)
   // }
 
   // useEffect(() => {
@@ -36,6 +32,7 @@ const IndexPage = () => {
   //   }
   // })
 
+  const ref = useRef(null);
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
@@ -47,6 +44,50 @@ const IndexPage = () => {
   const projectsScroll = () => projectsRef.current.scrollIntoView({behavior: "smooth", block: "nearest"});
   const skillsScroll = () => skillsRef.current.scrollIntoView({behavior: "smooth", block: "nearest"});
   const contactScroll = () => contactRef.current.scrollIntoView({behavior: "smooth", block: "nearest"});
+
+  // return (
+  //   <Container ref={ref}>
+  //     <Helmet
+  //       htmlAttributes={{
+  //         lang: 'en',
+  //       }}
+  //     >
+  //       <title>Derek Velzy</title>
+  //       <link rel="site" href="http://dvelzyportfolio.com" />
+  //       <meta name="Description" content="derek velzy's portfolio site" />
+  //     </Helmet>
+  //     <Switch>
+  //       <Button onClick={homeScroll}>home</Button>
+  //       <Button onClick={aboutScroll}>about</Button>
+  //       <Button onClick={projectsScroll}>projects</Button>
+  //       <Button onClick={skillsScroll}>skills</Button>
+  //       <Button onClick={contactScroll}>contact</Button>
+  //     </Switch>
+  //     {/* <Parallax strength={2600}> */}
+  //     <Parallax pages={5}>
+  //       <ParallaxLayer speed={-0.4} offset={0}>
+  //         <picture>
+  //           <source
+  //             style={{width: '100vw', height: '350vh', objectFit: 'cover', filter: 'brightness(85%)', position: 'absolute', zIndex: '-1'}}
+  //             alt="webp Federico Bottos"
+  //             srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/botts250.webp"/>
+  //           <img
+  //             style={{width: '100vw', height: '350vh', objectFit: 'cover', filter: 'brightness(85%)', position: 'absolute', zIndex: '-1'}}
+  //             alt="Federico Bottos"
+  //             src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/federico-bottos-7veINmpZL4Y-unsplash.jpg"
+  //           />
+  //         </picture>
+  //         </ParallaxLayer>
+
+  //         <ParallaxLayer speed={0.1} offset={0}><div ref={homeRef}><Home /></div></ParallaxLayer>
+  //         <ParallaxLayer speed={0.1} offset={1}><div ref={aboutRef}><About /></div></ParallaxLayer>
+  //         <ParallaxLayer speed={0.1} offset={2}><div ref={projectsRef}><Projects /></div></ParallaxLayer>
+  //         <ParallaxLayer speed={0.1} offset={3}><div ref={skillsRef}><Skills /></div></ParallaxLayer>
+  //         <ParallaxLayer speed={0.1} offset={4}><div ref={contactRef}><Contact /></div></ParallaxLayer>
+
+  //     </Parallax>
+  //   </Container>
+  // )
 
   return (
     <Container>
@@ -66,28 +107,13 @@ const IndexPage = () => {
         <Button onClick={skillsScroll}>skills</Button>
         <Button onClick={contactScroll}>contact</Button>
       </Switch>
-      <Parallax strength={2600}>
-        <Background>
-          <picture>
-            <source
-              style={{width: '100vw', filter: 'brightness(85%)'}}
-              alt="webp Federico Bottos"
-              srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/botts250.webp"/>
-            <img
-              style={{width: '100vw', filter: 'brightness(85%)'}}
-              alt="Federico Bottos"
-              src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/federico-bottos-7veINmpZL4Y-unsplash.jpg"
-            />
-          </picture>
-        </Background>
-        <div>
-          <div ref={homeRef}><Home /></div>
-          <div ref={aboutRef}><About /></div>
-          <div ref={projectsRef}><Projects /></div>
-          <div ref={skillsRef}><Skills /></div>
-          <div ref={contactRef}><Contact /></div>
-        </div>
-      </Parallax>
+      <div>
+        <div ref={homeRef}><Home /></div>
+        <div ref={aboutRef}><About /></div>
+        <div ref={projectsRef}><Projects /></div>
+        <div ref={skillsRef}><Skills /></div>
+        <div ref={contactRef}><Contact /></div>
+      </div>
     </Container>
   )
 };
@@ -121,6 +147,7 @@ const Button = styled.div`
 const Container = styled.div`
   margin: 0;
   padding: 0;
+  height: 100vh;
 `
 const Switch = styled.div`
   font-family: 'Montserrat', sans-serif;

@@ -5,6 +5,13 @@ import { animated, useSpring } from "react-spring";
 import { Line } from './home.js';
 
 const calc = (o) => `translateX(${o * 0.2}px)`;
+const blur = (o) => {
+  if (o < 0) {
+    return `blur(${-1 * o * 0.005}px) grayscale(${-1 * o * 0.3}%) brightness(${100 / (-1 * o * 0.001 + 1)}%)`
+  } else {
+    return `blur(${o * 0.005}px) grayscale(${o * 0.3}%) brightness(${100 / (o * 0.001 + 1)}%)`
+  }
+}
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -46,8 +53,22 @@ const About = () => {
   return (
     <Container ref={ref}>
       <animated.div style={{
-        transform: offset.interpolate(calc)
-      }}>
+        filter: offset.interpolate(blur),
+        height: '100vh', position: 'absolute'
+        }}>
+        <picture>
+          <source
+            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', marginLeft: '-50vw'}}
+            alt="webp Horner"
+            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGHorner.webp"/>
+          <img
+            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', marginLeft: '-50vw'}}
+            alt="Horner"
+            src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGHorner.jpg"
+          />
+        </picture>
+      </animated.div>
+      <animated.div style={{transform: offset.interpolate(calc)}}>
         <Title>About Me</Title>
       </animated.div>
       <Box data-aos="fade-up">

@@ -4,13 +4,20 @@ import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
 
 const calc = (o) => `translateX(${o * 0.2}px)`;
+const blur = (o) => {
+  if (o < 0) {
+    return `blur(${-1 * o * 0.005}px) grayscale(${-1 * o * 0.3}%) brightness(${100 / (-1 * o * 0.001+ 1)}%)`
+  } else {
+    return `blur(${o * 0.005}px) grayscale(${o * 0.3}%) brightness(${100 / (o * 0.001+ 1)}%)`
+  }
+}
 
 const Contact = () => {
   const ref = useRef();
   const [{offset}, set] = useSpring(() => ({ offset: 0 }));
 
   const handleScroll = () => {
-    const offset = ref.current.getBoundingClientRect().top;
+    const offset = -1 * ref.current.getBoundingClientRect().top;
     set({ offset });
   }
 
@@ -23,6 +30,19 @@ const Contact = () => {
 
   return (
     <Container ref={ref}>
+      <animated.div style={{filter: offset.interpolate(blur), height: '100vh', position: 'absolute'}}>
+        <picture>
+          <source
+            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(45%)', position: 'absolute', marginLeft: '-50vw'}}
+            alt="webp Bantersnaps"
+            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGBantersnaps.webp"/>
+          <img
+            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(45%)', position: 'absolute', marginLeft: '-50vw'}}
+            alt="Bantersnaps"
+            src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGBantersnaps.jpg"
+          />
+        </picture>
+      </animated.div>
       <animated.div style={{
         display: 'flex',
         alignItems: 'center',
@@ -59,14 +79,13 @@ const Contact = () => {
           </div>
         </Item>
       </Info>
-      <Footer>
+      {/* <Footer>
         <div>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.com" style={{color: 'rgb(230, 161, 255)'}}>Gatsby</a>
         </div>
-        <div>Photograph by Federico Bottos</div>
-      </Footer>
+      </Footer> */}
     </Container>
   )
 };
@@ -83,7 +102,7 @@ const Container = styled.div`
 `
 const Footer = styled.div`
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
   width: 480px;

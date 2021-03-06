@@ -3,6 +3,15 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
 
+const calc = (o) => `translateX(${o * 0.2}px)`;
+const blur = (o) => {
+  if (o < 0) {
+    return `blur(${-1 * o * 0.005}px) grayscale(${-1 * o * 0.3}%) brightness(${100 / (-1 * o * 0.001 + 1)}%)`
+  } else {
+    return `blur(${o * 0.005}px) grayscale(${o * 0.3}%) brightness(${100 / (o * 0.001 + 1)}%)`
+  }
+}
+
 const row1 = [
   {
     name: 'JavaScript',
@@ -72,8 +81,6 @@ const row3 = [
   }
 ];
 
-const calc = (o) => `translateX(${o * 0.2}px)`;
-
 const Skills = () => {
   const ref = useRef();
   const [{offset}, set] = useSpring(() => ({ offset: 0 }));
@@ -92,11 +99,25 @@ const Skills = () => {
 
   return (
     <Container ref={ref}>
-      <animated.div style={{
-        transform: offset.interpolate(calc)
+      <animated.div style={{filter: offset.interpolate(blur), height: '100vh', position: 'absolute'}}>
+        <picture>
+          <source
+            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
+            alt="webp Kalbarczyk"
+            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGKalbarczyk.webp"/>
+          <img
+            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
+            alt="Kalbarczyk"
+            src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGKalbarczyk.jpg"
+          />
+        </picture>
+      </animated.div>
+      <div data-aos="fade-right" style={{
+        // transform: offset.interpolate(calc)
+        transform: 'translateX(0px)'
       }}>
         <Title>Skills</Title>
-      </animated.div>
+      </div>
       <Boxes data-aos="fade-right">
         {row1.map((i) => (
           <Skill key={i.name}>
@@ -117,22 +138,6 @@ const Skills = () => {
           </Skill>
         ))}
       </Boxes>
-      {/* <Boxes data-aos="fade-left">
-        {row2.map((i) => (
-          <Skill key={i.name}>
-            <Logo alt="skills logo" src={i.img}/>
-            <Name>{i.name}</Name>
-          </Skill>
-        ))}
-      </Boxes>
-      <Boxes data-aos="fade-right">
-        {row3.map((i) => (
-          <Skill key={i.name}>
-            <Logo alt="skills logo" src={i.img}/>
-            <Name>{i.name}</Name>
-          </Skill>
-        ))}
-      </Boxes> */}
     </Container>
   )
 };

@@ -13,6 +13,13 @@ const webps = [
 ]
 
 const calc = (o) => `translateX(${o * 0.2}px)`;
+const blur = (o) => {
+  if (o < 0) {
+    return `blur(${-1 * o * 0.005}px) grayscale(${-1 * o * 0.3}%) brightness(${100 / (-1 * o * 0.001 + 1)}%)`
+  } else {
+    return `blur(${o * 0.005}px) grayscale(${o * 0.3}%) brightness(${100 / (o * 0.001 + 1)}%)`
+  }
+}
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
@@ -46,9 +53,10 @@ const Projects = () => {
 
   const ref = useRef();
   const [{offset}, set] = useSpring(() => ({ offset: 0 }));
+  const [{blurOff, setBlur}] = useSpring(() => ({blurOff: 0}))
 
   const handleScroll = () => {
-    const offset = ref.current.getBoundingClientRect().top;
+    const offset = -1 * ref.current.getBoundingClientRect().top;
     set({ offset });
   }
 
@@ -99,15 +107,29 @@ const Projects = () => {
 
   return (
     <Container ref={ref}>
-      <animated.div style={{
+      <animated.div style={{filter: offset.interpolate(blur), height: '100vh', position: 'absolute'}}>
+        <picture>
+          <source
+            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
+            alt="webp Korhonen"
+            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGKorhonen.webp"/>
+          <img
+            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
+            alt="Kornonen"
+            src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGKorhonen.jpg"
+          />
+        </picture>
+      </animated.div>
+      <div data-aos="fade-right" style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        transform: offset.interpolate(calc)
+        // transform: offset.interpolate(calc)
+        transform: 'translateX(0px)'
       }}>
         <Title>Projects</Title>
         <LinksTitle>Links to Repos on Github</LinksTitle>
-      </animated.div>
+      </div>
       <ProjectsCont>{projects}</ProjectsCont>
     </Container>
   )

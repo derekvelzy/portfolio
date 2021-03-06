@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
+import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
@@ -32,6 +33,9 @@ const images = [
     jpg: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/IMG_4280.jpg'
   }
 ];
+
+const calc = (o) => `translateX(${o * 0.2}px)`;
+const blur = (o) => `blur(${o * 0.005}px) grayscale(${o * 0.2}%) brightness(${100 / (o * 0.001 + 1)}%)`
 
 const Home = () => {
   const data = useStaticQuery(graphql`
@@ -66,7 +70,22 @@ const Home = () => {
       }
     }
   }
-  `)
+  `);
+
+  const ref = useRef();
+  const [{offset}, set] = useSpring(() => ({ offset: 0 }));
+
+  const handleScroll = () => {
+    const offset = -1 * ref.current.getBoundingClientRect().top;
+    set({ offset });
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  })
 
   const [frame, setFrame] = useState(0);
   const [selected, setSelected] = useState(
@@ -115,8 +134,23 @@ const Home = () => {
   }, [frame])
 
   return (
-    <Container>
-      <Name>{data.prismicHome.data.helloworld.text}</Name>
+    <Container ref={ref}>
+      <animated.div style={{filter: offset.interpolate(blur)}}>
+        <picture>
+          <source
+            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', zIndex: '0', marginLeft: '-50vw'}}
+            alt="webp Farooqui"
+            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGFarooqui.webp"/>
+          <img
+            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', zIndex: '0', marginLeft: '-50vw'}}
+            alt="Farooqui"
+            src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGFarooqui.jpg"
+          />
+        </picture>
+      </animated.div>
+      <animated.div style={{transform: offset.interpolate(calc)}}>
+        <Name>{data.prismicHome.data.helloworld.text}</Name>
+      </animated.div>
       <TransitionGroup component={Trans}>
         {selected}
       </TransitionGroup>
@@ -216,6 +250,7 @@ const Gmail = styled.img`
   }
 `
 const Icons = styled.div`
+  z-index: 1;
   width: 300px;
   display: flex;
   justify-content: space-between;
@@ -243,6 +278,7 @@ const ImageSource = styled.source`
   border: 2px solid white;
 `
 export const Line = styled.div`
+  z-index: 2;
   border-bottom: 1px solid white;
   width: 400px;
   margin-bottom: 30px;
@@ -266,6 +302,7 @@ const LinkedIn = styled.img`
   }
 `
 const Name = styled.div`
+  z-index: 2;
   font-size: 45px;
   margin-top: 17vh;
   font-family: 'Lobster', cursive;
@@ -299,6 +336,7 @@ const TransContainer = styled.div`
   align-items: center;
   top: 28vh;
   text-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+  z-index: 2;
 `
 
 export default Home;
