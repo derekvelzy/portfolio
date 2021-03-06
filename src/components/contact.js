@@ -18,7 +18,9 @@ const Contact = () => {
 
   const handleScroll = () => {
     const offset = -1 * ref.current.getBoundingClientRect().top;
-    set({ offset });
+    if (offset > -800 && offset < 800) {
+      set({ offset });
+    }
   }
 
   useEffect(() => {
@@ -46,9 +48,9 @@ const Contact = () => {
       <animated.div style={{
         display: 'flex',
         alignItems: 'center',
-        transform: offset.interpolate(calc)
+        transform: 'translateX(0)'
       }}>
-        <Title>Contact Info</Title>
+        <Title  data-aos="fade-up">Contact Info</Title>
       </animated.div>
       <Info>
         <Item data-aos="fade-up">

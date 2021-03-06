@@ -40,7 +40,9 @@ const About = () => {
 
   const handleScroll = () => {
     const offset = -1 * ref.current.getBoundingClientRect().top;
-    set({ offset });
+    if (offset > -800 && offset < 800) {
+      set({ offset });
+    }
   }
 
   useEffect(() => {
@@ -68,9 +70,11 @@ const About = () => {
           />
         </picture>
       </animated.div>
-      <animated.div style={{transform: offset.interpolate(calc)}}>
-        <Title>About Me</Title>
-      </animated.div>
+      {/* <animated.div style={{transform: offset.interpolate(calc)}}> */}
+      <div style={{transform: 'translateX(0)'}}>
+        <Title data-aos="fade-up">About Me</Title>
+      </div>
+      {/* </animated.div> */}
       <Box data-aos="fade-up">
         <P>{data.prismicAbout.data.body[0].primary.paragraph.text}</P>
         <P>{data.prismicAbout.data.body[1].primary.paragraph.text}</P>

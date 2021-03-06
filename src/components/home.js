@@ -77,7 +77,9 @@ const Home = () => {
 
   const handleScroll = () => {
     const offset = -1 * ref.current.getBoundingClientRect().top;
-    set({ offset });
+    if (offset > -800 && offset < 800) {
+      set({ offset });
+    }
   }
 
   useEffect(() => {

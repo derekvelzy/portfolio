@@ -57,7 +57,9 @@ const Projects = () => {
 
   const handleScroll = () => {
     const offset = -1 * ref.current.getBoundingClientRect().top;
-    set({ offset });
+    if (offset > -800 && offset < 800) {
+      set({ offset });
+    }
   }
 
   useEffect(() => {
@@ -120,15 +122,14 @@ const Projects = () => {
           />
         </picture>
       </animated.div>
-      <div data-aos="fade-right" style={{
+      <div style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        // transform: offset.interpolate(calc)
         transform: 'translateX(0px)'
       }}>
-        <Title>Projects</Title>
-        <LinksTitle>Links to Repos on Github</LinksTitle>
+        <Title data-aos="fade-left">Projects</Title>
+        <LinksTitle data-aos="fade-left">Links to Repos on Github</LinksTitle>
       </div>
       <ProjectsCont>{projects}</ProjectsCont>
     </Container>

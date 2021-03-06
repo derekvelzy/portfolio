@@ -87,7 +87,9 @@ const Skills = () => {
 
   const handleScroll = () => {
     const offset = -1 * ref.current.getBoundingClientRect().top;
-    set({ offset });
+    if (offset > -800 && offset < 800) {
+      set({ offset });
+    }
   }
 
   useEffect(() => {
@@ -112,11 +114,11 @@ const Skills = () => {
           />
         </picture>
       </animated.div>
-      <div data-aos="fade-right" style={{
+      <div style={{
         // transform: offset.interpolate(calc)
         transform: 'translateX(0px)'
       }}>
-        <Title>Skills</Title>
+        <Title data-aos="fade-left">Skills</Title>
       </div>
       <Boxes data-aos="fade-right">
         {row1.map((i) => (
