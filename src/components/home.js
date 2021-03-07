@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import BGFarooqui from './photos/BGFarooqui.jpg';
+import BGFarooqui150 from './photos/BGFarooqui150.webp';
 
 const messages = [
   'Full-Stack Software Engineer',
@@ -77,9 +79,7 @@ const Home = () => {
 
   const handleScroll = () => {
     const offset = -1 * ref.current.getBoundingClientRect().top;
-    if (offset > -800 && offset < 800) {
-      set({ offset });
-    }
+    set({ offset });
   }
 
   useEffect(() => {
@@ -142,11 +142,11 @@ const Home = () => {
           <source
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', zIndex: '0', marginLeft: '-50vw'}}
             alt="webp Farooqui"
-            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGFarooqui150.webp"/>
+            srcSet={BGFarooqui150}/>
           <img
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', zIndex: '0', marginLeft: '-50vw'}}
             alt="Farooqui"
-            src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGFarooqui.jpg"
+            src={BGFarooqui}
           />
         </picture>
       </animated.div>

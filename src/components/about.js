@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
 import { animated, useSpring } from "react-spring";
 import { Line } from './home.js';
+import BGHorner from './photos/BGHorner.jpg';
+import BGHorner150 from './photos/BGHorner150.webp';
 
 const calc = (o) => `translateX(${o * 0.2}px)`;
 const blur = (o) => {
@@ -40,9 +42,7 @@ const About = () => {
 
   const handleScroll = () => {
     const offset = -1 * ref.current.getBoundingClientRect().top;
-    if (offset > -800 && offset < 800) {
-      set({ offset });
-    }
+    set({ offset });
   }
 
   useEffect(() => {
@@ -62,11 +62,11 @@ const About = () => {
           <source
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="webp Horner"
-            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGHorner150.webp"/>
+            srcSet={BGHorner150}/>
           <img
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="Horner"
-            src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGHorner.jpg"
+            src={BGHorner}
           />
         </picture>
       </animated.div>

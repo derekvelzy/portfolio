@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
+import BGKalbarczyk from './photos/BGKalbarczyk.jpg';
+import BGKalbarczyk150 from './photos/BGKalbarczyk.webp';
 
 const calc = (o) => `translateX(${o * 0.2}px)`;
 const blur = (o) => {
@@ -87,9 +89,7 @@ const Skills = () => {
 
   const handleScroll = () => {
     const offset = -1 * ref.current.getBoundingClientRect().top;
-    if (offset > -800 && offset < 800) {
-      set({ offset });
-    }
+    set({ offset });
   }
 
   useEffect(() => {
@@ -106,11 +106,11 @@ const Skills = () => {
           <source
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="webp Kalbarczyk"
-            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGKalbarczyk.webp"/>
+            srcSet={BGKalbarczyk150}/>
           <img
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="Kalbarczyk"
-            src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGKalbarczyk.jpg"
+            src={BGKalbarczyk}
           />
         </picture>
       </animated.div>

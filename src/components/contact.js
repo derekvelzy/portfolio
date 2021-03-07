@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
+import BGBantersnaps from './photos/BGBantersnaps.jpg';
+import BGBantersnaps150 from './photos/BGBantersnaps150.webp';
 
 const calc = (o) => `translateX(${o * 0.2}px)`;
 const blur = (o) => {
@@ -18,9 +20,7 @@ const Contact = () => {
 
   const handleScroll = () => {
     const offset = -1 * ref.current.getBoundingClientRect().top;
-    if (offset > -800 && offset < 800) {
-      set({ offset });
-    }
+    set({ offset });
   }
 
   useEffect(() => {
@@ -37,11 +37,11 @@ const Contact = () => {
           <source
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(45%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="webp Bantersnaps"
-            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGBantersnaps150.webp"/>
+            srcSet={BGBantersnaps150}/>
           <img
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(45%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="Bantersnaps"
-            src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGBantersnaps.jpg"
+            src={BGBantersnaps}
           />
         </picture>
       </animated.div>

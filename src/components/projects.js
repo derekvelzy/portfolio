@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
+import BGKorhonen from './photos/BGKorhonen.jpg';
+import BGKorhonen150 from './photos/BGKorhonen150.webp';
 
 const webps = [
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/a_grouply.webp',
@@ -57,9 +59,7 @@ const Projects = () => {
 
   const handleScroll = () => {
     const offset = -1 * ref.current.getBoundingClientRect().top;
-    if (offset > -800 && offset < 800) {
-      set({ offset });
-    }
+    set({ offset });
   }
 
   useEffect(() => {
@@ -81,8 +81,6 @@ const Projects = () => {
         key={data.image.url}
         rel="noopener"
         target="_blank"
-        data-aos={title === 'Grouply' || title === 'Shadetree' || title === 'Postcard' ? 'fade-right' : 'fade-left'}
-        data-aos-offset="50"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
@@ -114,11 +112,11 @@ const Projects = () => {
           <source
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="webp Korhonen"
-            srcSet="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGKorhonen150.webp"/>
+            srcSet={BGKorhonen150}/>
           <img
             style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
             alt="Kornonen"
-            src="https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/BGKorhonen.jpg"
+            src={BGKorhonen}
           />
         </picture>
       </animated.div>
@@ -131,7 +129,7 @@ const Projects = () => {
         <Title data-aos="fade-left">Projects</Title>
         <LinksTitle data-aos="fade-left">Links to Repos on Github</LinksTitle>
       </div>
-      <ProjectsCont>{projects}</ProjectsCont>
+      <ProjectsCont data-aos='fade-left' data-aos-offset="50">{projects}</ProjectsCont>
     </Container>
   )
 };
