@@ -165,7 +165,7 @@ const Boxes = styled.div`
 const Container = styled.div`
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -237,7 +237,8 @@ const Name = styled.div`
 `
 const Skill = styled.div`
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-  background: rgba(26, 25, 34, 0.85);
+  // background: rgba(26, 25, 34, 0.85);
+  background: rgba(240, 240, 250, 0.5);
   backdrop-filter: blur(12px);
   width: 144px;
   height: 110px;
@@ -285,6 +286,7 @@ const Title = styled.div`
   font-size: 45px;
   margin-bottom: 0vh;
   font-family: 'Lobster', cursive;
+  color: white;
   letter-spacing: 1px;
   text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
   @media (max-width: 950px) {

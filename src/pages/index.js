@@ -53,11 +53,11 @@ const IndexPage = () => {
         <picture style={{height: '500vh', width: '100vw',
         position: 'absolute'}}>
           <source
-            style={{width: '100vw', height: '500vh', objectFit: 'cover', filter: 'brightness(75%)', position: 'absolute'}}
+            style={{width: '100vw', height: '500vh', objectFit: 'cover', filter: 'brightness(75%) blur(2px)', position: 'absolute'}}
             alt="webp Korhonen"
             srcSet={Forest}/>
           <img
-            style={{width: '100vw', height: '500vh', objectFit: 'cover', filter: 'brightness(75%)', position: 'absolute'}}
+            style={{width: '100vw', height: '500vh', objectFit: 'cover', filter: 'brightness(75%) blur(2px)', position: 'absolute'}}
             alt="Kornonen"
             src={Forest}
           />
@@ -91,8 +91,9 @@ const BGSource = styled.source`
   position: fixed;
 `
 const Button = styled.div`
-  background: rgba(26, 25, 34);
-  color: white;
+  // background: rgba(26, 25, 34);
+  background: rgba(240, 240, 250, 0.8);
+  color: blacks;
   font-size: 13px;
   height: 60px;
   width: 96px;
@@ -102,8 +103,9 @@ const Button = styled.div`
   cursor: pointer;
   transition: all 0.4s ease;
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px;
-    background: rgb(47, 44, 56);
+    // box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px;
+    // background: rgb(47, 44, 56);
+    background: rgba(245, 245, 250, 0.9);
   }
 `
 const Container = styled.div`

@@ -91,7 +91,8 @@ const About = () => {
 
 const Box = styled.div`
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-  background: rgba(26, 25, 34, 0.85);
+  // background: rgba(26, 25, 34, 0.85);
+  background: rgba(240, 240, 250, 0.5);
   backdrop-filter: blur(12px);
   padding: 24px;
   width: 630px;
@@ -135,7 +136,7 @@ const Box = styled.div`
 const Container = styled.div`
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -170,6 +171,7 @@ const School = styled.div`
   font-weight: 600;
 `
 const Title = styled.div`
+  color: white;
   font-size: 45px;
   margin-bottom: 26px;
   font-family: 'Lobster', cursive;

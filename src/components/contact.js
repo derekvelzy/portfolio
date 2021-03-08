@@ -80,7 +80,7 @@ const Contact = () => {
 const Container = styled.div`
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,7 +158,8 @@ const Item = styled.div`
   display: flex;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-  background: rgba(26, 25, 34, 0.85);
+  // background: rgba(26, 25, 34, 0.85);
+  background: rgba(240, 240, 250, 0.5);
   backdrop-filter: blur(12px);
   padding: 28px;
   border-radius: 20px;
@@ -176,7 +177,7 @@ const Item = styled.div`
   }
 `
 const Link = styled.a`
-  color: rgb(99, 139, 176);
+  color: rgb(43, 91, 138);
 `
 const LinkedIn = styled.img`
   width: 54px;
@@ -225,6 +226,7 @@ const Title = styled.div`
   letter-spacing: 1px;
   font-size: 45px;
   font-family: 'Lobster', cursive;
+  color: white;
   text-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
   align-self: center;
   margin-bottom: 4vh;

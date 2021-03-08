@@ -129,7 +129,9 @@ const Container = styled.div`
   height: 100vh;
 `
 const Description = styled.div`
-  background: rgba(26, 25, 34, 0.85);
+  // background: rgba(26, 25, 34, 0.85);
+  background: rgba(150, 150, 160, 0.99);
+  color: black;
   backdrop-filter: blur(12px);
   padding: 10px 15px 15px 15px;
   font-size: 14px;
@@ -150,7 +152,7 @@ const Description = styled.div`
 `
 const Image = styled.img`
   width: 240px;
-  height: 240px;
+  height: 230px;
   object-fit: cover;
   @media (max-width: 1135px) {
     width: 230px;
@@ -222,7 +224,8 @@ const ImageCont = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
-  background: rgba(26, 25, 34, 0.85);
+  // background: rgba(26, 25, 34, 0.85);
+  background: rgba(150, 150, 160, 0.99);
   backdrop-filter: blur(12px);
   margin-top: -2px;
 `
@@ -240,7 +243,9 @@ const LinksTitle = styled.div`
 const ProjectTitle = styled.div`
   padding: 12px 0px 0px 15px;
   font-size: 14.5px;
-  background: rgba(26, 25, 34, 0.85);
+  // background: rgba(26, 25, 34, 0.99);
+  background: rgba(150, 150, 160, 0.99);
+  color: black;
   backdrop-filter: blur(12px);
   height: 40px;
   z-index: 1;
@@ -363,6 +368,7 @@ const ProjectsCont = styled.div`
   }
 `
 const Title = styled.div`
+  color: white;
   margin-bottom: 1vh;
   letter-spacing: 1px;
   font-size: 45px;
