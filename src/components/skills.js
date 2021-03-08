@@ -2,8 +2,6 @@ import React, { useRef, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
-import BGKalbarczyk from './photos/BGKalbarczyk.jpg';
-import BGKalbarczyk150 from './photos/BGKalbarczyk.webp';
 
 const calc = (o) => `translateX(${o * 0.2}px)`;
 const blur = (o) => {
@@ -101,24 +99,11 @@ const Skills = () => {
 
   return (
     <Container ref={ref}>
-      <animated.div style={{filter: offset.interpolate(blur), height: '100vh', position: 'absolute'}}>
-        <picture>
-          <source
-            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
-            alt="webp Kalbarczyk"
-            srcSet={BGKalbarczyk150}/>
-          <img
-            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
-            alt="Kalbarczyk"
-            src={BGKalbarczyk}
-          />
-        </picture>
-      </animated.div>
       <div style={{
         // transform: offset.interpolate(calc)
         transform: 'translateX(0px)'
       }}>
-        <Title data-aos="fade-left">Skills</Title>
+        <Title data-aos="fade-right">Skills</Title>
       </div>
       <Boxes data-aos="fade-right">
         {row1.map((i) => (

@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 // import loadable from '@loadable/component';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import Forest from '../components/photos/Forest.jpeg';
 
 // const Home = loadable(() => import('../components/home.js'));
 // const About = loadable(() => import('../components/about.js'));
@@ -49,6 +50,18 @@ const IndexPage = () => {
         <link rel="site" href="http://dvelzyportfolio.com" />
         <meta name="Description" content="derek velzy's portfolio site" />
       </Helmet>
+        <picture style={{height: '500vh', width: '100vw',
+        position: 'absolute'}}>
+          <source
+            style={{width: '100vw', height: '500vh', objectFit: 'cover', filter: 'brightness(75%)', position: 'absolute'}}
+            alt="webp Korhonen"
+            srcSet={Forest}/>
+          <img
+            style={{width: '100vw', height: '500vh', objectFit: 'cover', filter: 'brightness(75%)', position: 'absolute'}}
+            alt="Kornonen"
+            src={Forest}
+          />
+        </picture>
       <Switch>
         <Button onClick={homeScroll}>home</Button>
         <Button onClick={aboutScroll}>about</Button>
@@ -96,7 +109,7 @@ const Button = styled.div`
 const Container = styled.div`
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 500vh;
 `
 const Switch = styled.div`
   font-family: 'Montserrat', sans-serif;

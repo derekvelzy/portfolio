@@ -3,8 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import BGFarooqui from './photos/BGFarooqui.jpg';
-import BGFarooqui150 from './photos/BGFarooqui150.webp';
 
 const messages = [
   'Full-Stack Software Engineer',
@@ -137,19 +135,6 @@ const Home = () => {
 
   return (
     <Container ref={ref}>
-      <animated.div style={{filter: offset.interpolate(blur)}}>
-        <picture>
-          <source
-            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', zIndex: '0', marginLeft: '-50vw'}}
-            alt="webp Farooqui"
-            srcSet={BGFarooqui150}/>
-          <img
-            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', zIndex: '0', marginLeft: '-50vw'}}
-            alt="Farooqui"
-            src={BGFarooqui}
-          />
-        </picture>
-      </animated.div>
       <animated.div style={{transform: offset.interpolate(calc)}}>
         <Name>{data.prismicHome.data.helloworld.text}</Name>
       </animated.div>

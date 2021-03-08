@@ -3,8 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components';
 import { animated, useSpring } from "react-spring";
 import { Line } from './home.js';
-import BGHorner from './photos/BGHorner.jpg';
-import BGHorner150 from './photos/BGHorner150.webp';
 
 const calc = (o) => `translateX(${o * 0.2}px)`;
 const blur = (o) => {
@@ -54,27 +52,11 @@ const About = () => {
 
   return (
     <Container ref={ref}>
-      <animated.div style={{
-        filter: offset.interpolate(blur),
-        height: '100vh', position: 'absolute'
-        }}>
-        <picture>
-          <source
-            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', marginLeft: '-50vw'}}
-            alt="webp Horner"
-            srcSet={BGHorner150}/>
-          <img
-            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(65%)', position: 'absolute', marginLeft: '-50vw'}}
-            alt="Horner"
-            src={BGHorner}
-          />
-        </picture>
+      <animated.div style={{transform: offset.interpolate(calc)}}>
+      {/* <div style={{transform: offset.interpolate(calc)}}> */}
+        <Title>About Me</Title>
+      {/* </div> */}
       </animated.div>
-      {/* <animated.div style={{transform: offset.interpolate(calc)}}> */}
-      <div style={{transform: 'translateX(0)'}}>
-        <Title data-aos="fade-up">About Me</Title>
-      </div>
-      {/* </animated.div> */}
       <Box data-aos="fade-up">
         <P>{data.prismicAbout.data.body[0].primary.paragraph.text}</P>
         <P>{data.prismicAbout.data.body[1].primary.paragraph.text}</P>

@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
-import BGKorhonen from './photos/BGKorhonen.jpg';
-import BGKorhonen150 from './photos/BGKorhonen150.webp';
 
 const webps = [
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/a_grouply.webp',
@@ -107,24 +105,11 @@ const Projects = () => {
 
   return (
     <Container ref={ref}>
-      <animated.div style={{filter: offset.interpolate(blur), height: '100vh', position: 'absolute'}}>
-        <picture>
-          <source
-            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
-            alt="webp Korhonen"
-            srcSet={BGKorhonen150}/>
-          <img
-            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(55%)', position: 'absolute', marginLeft: '-50vw'}}
-            alt="Kornonen"
-            src={BGKorhonen}
-          />
-        </picture>
-      </animated.div>
       <div style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        transform: 'translateX(0px)'
+        transform: 'translateX(0)'
       }}>
         <Title data-aos="fade-left">Projects</Title>
         <LinksTitle data-aos="fade-left">Links to Repos on Github</LinksTitle>

@@ -2,8 +2,6 @@ import React, { useRef, useEffect } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
-import BGBantersnaps from './photos/BGBantersnaps.jpg';
-import BGBantersnaps150 from './photos/BGBantersnaps150.webp';
 
 const calc = (o) => `translateX(${o * 0.2}px)`;
 const blur = (o) => {
@@ -32,25 +30,12 @@ const Contact = () => {
 
   return (
     <Container ref={ref}>
-      <animated.div style={{filter: offset.interpolate(blur), height: '100vh', position: 'absolute'}}>
-        <picture>
-          <source
-            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(45%)', position: 'absolute', marginLeft: '-50vw'}}
-            alt="webp Bantersnaps"
-            srcSet={BGBantersnaps150}/>
-          <img
-            style={{width: '100vw', height: '100vh', objectFit: 'cover', filter: 'brightness(45%)', position: 'absolute', marginLeft: '-50vw'}}
-            alt="Bantersnaps"
-            src={BGBantersnaps}
-          />
-        </picture>
-      </animated.div>
       <animated.div style={{
         display: 'flex',
         alignItems: 'center',
-        transform: 'translateX(0)'
+        transform: offset.interpolate(calc)
       }}>
-        <Title  data-aos="fade-up">Contact Info</Title>
+        <Title>Contact Info</Title>
       </animated.div>
       <Info>
         <Item data-aos="fade-up">
