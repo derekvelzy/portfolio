@@ -8,7 +8,7 @@ const webps = [
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/b_shadetree.webp',
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/Main.webp',
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/hindsightSC.webp',
-  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/e_ringmeup.webp',
+  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/CLFilterSC.webp',
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/sdcDiagram.webp'
 ]
 
