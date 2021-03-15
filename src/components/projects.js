@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const webps = [
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/a_grouply.webp',
-  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/projects/b_shadetree.webp',
+  'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/Screen+Shot+2021-02-25+at+7.01.21+PM.png',
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/Main.webp',
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/hindsightSC.webp',
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/CLFilterSC.webp',
@@ -86,12 +86,12 @@ const Projects = () => {
         <ImageCont>
           <picture>
             <ImageSource
-              style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}}
+              style={{marginTop: title === 'Optimize Prime System Design' || title === 'Zero Clone' ? "-50px" : "-7px"}}
               alt={`${title} project`}
               srcSet={webps[i]}
             />
             <Image
-              style={{marginTop: title === 'Optimize Prime System Design' ? "-50px" : "-7px"}}
+              style={{marginTop: title === 'Optimize Prime System Design' || title === 'Zero Clone' ? "-50px" : "-7px"}}
               alt={`${title} project`}
               src={data.image.url}
             />
