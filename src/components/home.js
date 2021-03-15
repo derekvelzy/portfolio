@@ -135,9 +135,9 @@ const Home = () => {
 
   return (
     <Container ref={ref}>
-      <animated.div style={{transform: offset.interpolate(calc)}}>
-        <Name>{data.prismicHome.data.helloworld.text}</Name>
-      </animated.div>
+      {/* <animated.div style={{transform: offset.interpolate(calc)}}> */}
+        <Name data-aos="fade-left">{data.prismicHome.data.helloworld.text}</Name>
+      {/* </animated.div> */}
       <TransitionGroup component={Trans}>
         {selected}
       </TransitionGroup>

@@ -3,14 +3,14 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { animated, useSpring } from "react-spring";
 import styled from 'styled-components';
 
-const calc = (o) => `translateX(${o * 0.2}px)`;
-const blur = (o) => {
-  if (o < 0) {
-    return `blur(${-1 * o * 0.005}px) grayscale(${-1 * o * 0.3}%) brightness(${100 / (-1 * o * 0.001 + 1)}%)`
-  } else {
-    return `blur(${o * 0.005}px) grayscale(${o * 0.3}%) brightness(${100 / (o * 0.001 + 1)}%)`
-  }
-}
+// const calc = (o) => `translateX(${o * 0.2}px)`;
+// const blur = (o) => {
+//   if (o < 0) {
+//     return `blur(${-1 * o * 0.005}px) grayscale(${-1 * o * 0.3}%) brightness(${100 / (-1 * o * 0.001 + 1)}%)`
+//   } else {
+//     return `blur(${o * 0.005}px) grayscale(${o * 0.3}%) brightness(${100 / (o * 0.001 + 1)}%)`
+//   }
+// }
 
 const row1 = [
   {
@@ -83,19 +83,19 @@ const row3 = [
 
 const Skills = () => {
   const ref = useRef();
-  const [{offset}, set] = useSpring(() => ({ offset: 0 }));
+  // const [{offset}, set] = useSpring(() => ({ offset: 0 }));
 
-  const handleScroll = () => {
-    const offset = -1 * ref.current.getBoundingClientRect().top;
-    set({ offset });
-  }
+  // const handleScroll = () => {
+  //   const offset = -1 * ref.current.getBoundingClientRect().top;
+  //   set({ offset });
+  // }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    }
-  })
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   }
+  // })
 
   return (
     <Container ref={ref}>

@@ -12,14 +12,14 @@ const webps = [
   'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/sdcDiagram.webp'
 ]
 
-const calc = (o) => `translateX(${o * 0.2}px)`;
-const blur = (o) => {
-  if (o < 0) {
-    return `blur(${-1 * o * 0.005}px) grayscale(${-1 * o * 0.3}%) brightness(${100 / (-1 * o * 0.001 + 1)}%)`
-  } else {
-    return `blur(${o * 0.005}px) grayscale(${o * 0.3}%) brightness(${100 / (o * 0.001 + 1)}%)`
-  }
-}
+// const calc = (o) => `translateX(${o * 0.2}px)`;
+// const blur = (o) => {
+//   if (o < 0) {
+//     return `blur(${-1 * o * 0.005}px) grayscale(${-1 * o * 0.3}%) brightness(${100 / (-1 * o * 0.001 + 1)}%)`
+//   } else {
+//     return `blur(${o * 0.005}px) grayscale(${o * 0.3}%) brightness(${100 / (o * 0.001 + 1)}%)`
+//   }
+// }
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
@@ -52,20 +52,20 @@ const Projects = () => {
   `)
 
   const ref = useRef();
-  const [{offset}, set] = useSpring(() => ({ offset: 0 }));
-  const [{blurOff, setBlur}] = useSpring(() => ({blurOff: 0}))
+  // const [{offset}, set] = useSpring(() => ({ offset: 0 }));
+  // const [{blurOff, setBlur}] = useSpring(() => ({blurOff: 0}))
 
-  const handleScroll = () => {
-    const offset = -1 * ref.current.getBoundingClientRect().top;
-    set({ offset });
-  }
+  // const handleScroll = () => {
+  //   const offset = -1 * ref.current.getBoundingClientRect().top;
+  //   set({ offset });
+  // }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    }
-  })
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   }
+  // })
 
   const [hover, setHover] = useState(false);
   let i = -1;
