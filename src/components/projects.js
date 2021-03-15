@@ -86,12 +86,12 @@ const Projects = () => {
         <ImageCont>
           <picture>
             <ImageSource
-              style={{marginTop: title === 'Optimize Prime System Design' || title === 'Zero Clone' ? "-50px" : "-7px"}}
+              style={{marginTop: title === 'Optimize Prime System Design' || title === 'Zero Clone' ? "-45px" : "-7px"}}
               alt={`${title} project`}
               srcSet={webps[i]}
             />
             <Image
-              style={{marginTop: title === 'Optimize Prime System Design' || title === 'Zero Clone' ? "-50px" : "-7px"}}
+              style={{marginTop: title === 'Optimize Prime System Design' || title === 'Zero Clone' ? "-45px" : "-7px"}}
               alt={`${title} project`}
               src={data.image.url}
             />
@@ -277,9 +277,9 @@ const Project = styled.a`
   border-radius: 16px;
   transition: all 0.3s ease;
   &:hover {
-    transition: all 0.1s ease;
+    transition: all 0.05s ease;
     box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px;
-    margin-top: -4px;
+    margin-top: -2px;
   }
   &:hover ${ProjectTitle} {
     transition: all 0.7s ease;
