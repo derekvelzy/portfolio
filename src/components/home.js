@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const messages = [
-  'Full-Stack Software Engineer',
+  'Frontend Software Engineer',
   'Two-Wheeled Enthusiast',
   'Guitarist',
   'Climber',

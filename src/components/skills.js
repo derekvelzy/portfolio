@@ -26,19 +26,50 @@ const row1 = [
     img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/React.png'
   },
   {
+    name: 'AngularJS',
+    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/angular.png'
+  },
+  {
     name: 'React Native',
     img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/RN.png'
   },
-  {
-    name: 'Node.js',
-    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/node.png'
-  }
 ];
 
 const row2 = [
   {
+    name: 'HTML',
+    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/html.png'
+  },
+  {
+    name: 'CSS',
+    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/css.png'
+  },
+  {
+    name: 'Jasmine',
+    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/jasmine.png'
+  },
+  {
+    name: 'Jest/Enzyme',
+    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/jest.png'
+  },
+  {
     name: 'Webpack',
     img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/webpack.png'
+  }
+];
+
+const row3 = [
+  {
+    name: 'Git',
+    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/git.png'
+  },
+  {
+    name: 'AWS',
+    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/aws.png'
+  },
+  {
+    name: 'Node.js',
+    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/node.png'
   },
   {
     name: 'PostgreSQL',
@@ -47,37 +78,6 @@ const row2 = [
   {
     name: 'MongoDB',
     img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/mongo.png'
-  },
-  {
-    name: 'ArangoDB',
-    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/arango.png'
-  },
-  {
-    name: 'Nginx',
-    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/nginx.png'
-  }
-];
-
-const row3 = [
-  {
-    name: 'Jest/Enzyme',
-    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/jest.png'
-  },
-  {
-    name: 'Styled Components',
-    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/SC.png'
-  },
-  {
-    name: 'AWS',
-    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/aws.png'
-  },
-  {
-    name: 'HTML',
-    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/html.png'
-  },
-  {
-    name: 'CSS',
-    img: 'https://derekvelzy-website-images.s3-us-west-1.amazonaws.com/logos/css.png'
   }
 ];
 

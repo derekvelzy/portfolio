@@ -56,7 +56,13 @@ const About = () => {
         <Title data-aos="fade-left">About Me</Title>
       {/* </animated.div> */}
       <Box data-aos="fade-up">
-        <P>{data.prismicAbout.data.body[0].primary.paragraph.text}</P>
+        {/* <P>{data.prismicAbout.data.body[0].primary.paragraph.text}</P> */}
+        <P>
+          I am a Software Engineer from the San FranciscoBay Area currently working in Design Engineering
+          for Visa's React and Angular UI framework for global products. I have experience in
+          full-stack web development including Node.js, relational & non-relational databases, and deployment
+          on AWS, and I love contributing to open source in my free time.
+        </P>
         <P>{data.prismicAbout.data.body[1].primary.paragraph.text}</P>
       </Box>
       <div style={{height: '26px'}}/>
