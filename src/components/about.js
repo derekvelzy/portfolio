@@ -36,32 +36,16 @@ const About = () => {
   `);
 
   const ref = useRef();
-  // const [{offset}, set] = useSpring(() => ({ offset: 0 }));
-
-  // const handleScroll = () => {
-  //   const offset = -1 * ref.current.getBoundingClientRect().top;
-  //   set({ offset });
-  // }
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   }
-  // })
 
   return (
     <Container ref={ref}>
-      {/* <animated.div style={{transform: offset.interpolate(calc)}}> */}
         <Title data-aos="fade-left">About Me</Title>
-      {/* </animated.div> */}
       <Box data-aos="fade-up">
-        {/* <P>{data.prismicAbout.data.body[0].primary.paragraph.text}</P> */}
         <P>
           I am a Software Engineer from the San FranciscoBay Area currently working in Design Engineering
           for Visa's React and Angular UI framework for global products. I have experience in
           full-stack web development including Node.js, relational & non-relational databases, and deployment
-          on AWS, and I love contributing to open source in my free time.
+          on AWS, and I enjoy contributing to open source in my free time.
         </P>
         <P>{data.prismicAbout.data.body[1].primary.paragraph.text}</P>
       </Box>
