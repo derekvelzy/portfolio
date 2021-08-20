@@ -4,15 +4,6 @@ import styled from 'styled-components';
 import { animated, useSpring } from "react-spring";
 import { Line } from './home.js';
 
-// const calc = (o) => `translateX(${o * 0.2}px)`;
-// const blur = (o) => {
-//   if (o < 0) {
-//     return `blur(${-1 * o * 0.005}px) grayscale(${-1 * o * 0.3}%) brightness(${100 / (-1 * o * 0.001 + 1)}%)`
-//   } else {
-//     return `blur(${o * 0.005}px) grayscale(${o * 0.3}%) brightness(${100 / (o * 0.001 + 1)}%)`
-//   }
-// }
-
 const About = () => {
   const data = useStaticQuery(graphql`
   {
